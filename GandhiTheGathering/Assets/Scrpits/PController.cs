@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PController : MonoBehaviour
 {
     public Camera camP;
-    public NavMeshAgent agetP;
+    public NavMeshAgent agentP;
     public GameObject followers;
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class PController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                agetP.SetDestination(hit.point);
+                agentP.SetDestination(hit.point);
             }
             
         }
