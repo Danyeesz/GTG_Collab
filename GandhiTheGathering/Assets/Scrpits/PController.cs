@@ -26,12 +26,6 @@ public class PController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Enemy")
-        {
-            GameObject follow = Instantiate(followers,gameObject.transform.position, gameObject.transform.rotation);
-        }
-    }
+    
     
 }

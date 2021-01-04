@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public LayerMask isGround, isPlayer;
     public bool inSight;
 
+    public Material follower;
+
     public Vector3 dest;
     public float destRange, sightRange;
     bool destSet;
@@ -34,6 +36,18 @@ public class EnemyController : MonoBehaviour
         else if (inSight)
         {
             Chase();
+        }
+
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            agentE.stoppingDistance = 1.0f;
+            agentE.SetDestination(player.position);
+            gameObject.GetComponent<MeshRenderer>().material = follower;
         }
     }
 
