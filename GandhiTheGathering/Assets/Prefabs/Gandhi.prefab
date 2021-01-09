@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1834113387730670552}
   - component: {fileID: 1834113387730670555}
   - component: {fileID: 1834113387730670554}
-  - component: {fileID: 1834113387730670565}
   - component: {fileID: 1834113387730670564}
   - component: {fileID: 1834113387730670558}
   m_Layer: 9
@@ -99,21 +98,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1834113387730670565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834113387730670567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724d37e15cb53a247b4e45174336c989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camP: {fileID: 0}
-  agentP: {fileID: 1834113387730670564}
-  followers: {fileID: 6931216846345879561, guid: 622dde31ddf256d44bbfca0cafdc1b0b, type: 3}
 --- !u!195 &1834113387730670564
 NavMeshAgent:
   m_ObjectHideFlags: 0
