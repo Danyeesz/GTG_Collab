@@ -12,8 +12,11 @@ public class EnemyController : MonoBehaviour
     public bool inSight;
 
     public Material follower;
+    
 
-    public Vector3 dest;
+
+    public Transform dest;
+    public Vector3 destV;
     public float destRange, sightRange;
     bool destSet;
 
@@ -45,9 +48,13 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            agentE.stoppingDistance = 1.0f;
+            agentE.stoppingDistance = 1.5f;
             agentE.SetDestination(player.position);
             gameObject.GetComponent<MeshRenderer>().material = follower;
+            gameObject.tag = "Player";
+
+            
+
         }
     }
 
@@ -59,18 +66,24 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            agentE.SetDestination(dest);
+            agentE.SetDestination(dest.position);
         }
 
-        if (gameObject.transform.position == dest)
+        Vector3 destDist = transform.position - destV;
+
+        if (destDist.magnitude <1f)
         {
             destSet = false;
         }
+
+        
     }
 
     private void Chase() {
-
-        agentE.SetDestination(player.position);
+       
+            agentE.SetDestination(player.position);
+        
+        
 
     }
 
@@ -78,13 +91,18 @@ public class EnemyController : MonoBehaviour
 
         float randomZ = Random.Range(-destRange, destRange);
         float randomX = Random.Range(-destRange, destRange);
-        dest = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        destV = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(dest, -transform.up,2f,isGround))
+        if (Physics.Raycast(destV, -transform.up,2f,isGround))
         {
+            dest.position = destV;
             destSet = true;
+
         }
 
     }
-   
+
+  
+  
+
 }
