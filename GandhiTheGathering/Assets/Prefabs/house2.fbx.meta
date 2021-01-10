@@ -3,7 +3,37 @@ guid: d603dbf1e17ccab4ab9f9f2c61ca91d7
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick
+    second: {fileID: 2100000, guid: 385ec7b7bed5e294bb94f4ea681ad597, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: house
+    second: {fileID: 2100000, guid: e8efc0dea3b37f745a635ef5335b4de9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner space
+    second: {fileID: 2100000, guid: 8402cbf713f17c34cbf2239a85921827, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: adec4442b6352084db5def1ccb291402, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shalter
+    second: {fileID: 2100000, guid: b01ba6412aadc2a44bfac84ef5e4ce70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window frames
+    second: {fileID: 2100000, guid: c913eb521d199624ba268ac39d237566, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

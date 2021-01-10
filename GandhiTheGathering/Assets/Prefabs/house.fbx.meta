@@ -3,7 +3,62 @@ guid: 301fafe1b7a7ee642a71d7d6fc9855e0
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arc
+    second: {fileID: 2100000, guid: d143b17c8ea10d84c8bf5ffec141b27b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: busket
+    second: {fileID: 2100000, guid: f0e453de25139bb46a188ee168bb0c1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: busket metal
+    second: {fileID: 2100000, guid: 48b939d9b06dee046b3064241807aa5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: house
+    second: {fileID: 2100000, guid: 89dd6e3c52fecc345813304ee905a4f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner space
+    second: {fileID: 2100000, guid: a45b6a65da940c8438463f92107be1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: 64b7aa1248537124cb53060b85fb8787, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tube
+    second: {fileID: 2100000, guid: 9f3d1b405bfb9a24e990b9812ce5d5a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tubes
+    second: {fileID: 2100000, guid: a5ba2d097cf3839468140bc9505bb83f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood1
+    second: {fileID: 2100000, guid: 3bbd260a94543c84ea0eed01b9191bb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood2
+    second: {fileID: 2100000, guid: ff23744b296c3e544ad341d791a655d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood3
+    second: {fileID: 2100000, guid: bd09620eb8a0b1840a7118b8365790c3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
