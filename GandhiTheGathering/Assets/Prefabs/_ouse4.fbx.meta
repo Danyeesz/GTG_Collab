@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d603dbf1e17ccab4ab9f9f2c61ca91d7
+guid: b85a5598c20cdc14b91aa306b2dd655c
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,33 +7,58 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: brick
-    second: {fileID: 2100000, guid: 385ec7b7bed5e294bb94f4ea681ad597, type: 2}
+      name: buscket
+    second: {fileID: 2100000, guid: d612e5fd60204554783a111870c65932, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: house
-    second: {fileID: 2100000, guid: e8efc0dea3b37f745a635ef5335b4de9, type: 2}
+      name: buscket circles
+    second: {fileID: 2100000, guid: 0759d98f852c70a46ae0bd27f5dfe900, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: inner space
-    second: {fileID: 2100000, guid: 8402cbf713f17c34cbf2239a85921827, type: 2}
+      name: seed
+    second: {fileID: 2100000, guid: 0e2eba23cc3acfd4c829fb74352ceedc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: roof
-    second: {fileID: 2100000, guid: adec4442b6352084db5def1ccb291402, type: 2}
+      name: sticks
+    second: {fileID: 2100000, guid: 49796d0371f01ba4b8c36255b2bae843, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: shalter
-    second: {fileID: 2100000, guid: b01ba6412aadc2a44bfac84ef5e4ce70, type: 2}
+      name: textile
+    second: {fileID: 2100000, guid: 15ea341fb9bf862499795651d2dbcddd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: window frames
-    second: {fileID: 2100000, guid: c913eb521d199624ba268ac39d237566, type: 2}
+      name: wood
+    second: {fileID: 2100000, guid: 57499c779cbbdf74d985117ffaa6c616, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood2
+    second: {fileID: 2100000, guid: 6d52c49bbda28a54794717ef478c9419, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood3
+    second: {fileID: 2100000, guid: e23bbcd3edf6d2a419c80ed5cac9ea66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood4
+    second: {fileID: 2100000, guid: 428f5adf6722e334ea10a57c04e5d1ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood5
+    second: {fileID: 2100000, guid: dc7e769e00555b64b98db5a9890df1a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood6
+    second: {fileID: 2100000, guid: bfbc77083544e4f4d8aaf7baf468d62c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

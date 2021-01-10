@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d603dbf1e17ccab4ab9f9f2c61ca91d7
+guid: b814ad6b0193fe94aaa2f212d77c83fc
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,33 +7,58 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: brick
-    second: {fileID: 2100000, guid: 385ec7b7bed5e294bb94f4ea681ad597, type: 2}
+      name: arc
+    second: {fileID: 2100000, guid: d143b17c8ea10d84c8bf5ffec141b27b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: busket
+    second: {fileID: 2100000, guid: f0e453de25139bb46a188ee168bb0c1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: busket metal
+    second: {fileID: 2100000, guid: 48b939d9b06dee046b3064241807aa5b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: house
-    second: {fileID: 2100000, guid: e8efc0dea3b37f745a635ef5335b4de9, type: 2}
+    second: {fileID: 2100000, guid: 89dd6e3c52fecc345813304ee905a4f1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: inner space
-    second: {fileID: 2100000, guid: 8402cbf713f17c34cbf2239a85921827, type: 2}
+    second: {fileID: 2100000, guid: a45b6a65da940c8438463f92107be1c3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: roof
-    second: {fileID: 2100000, guid: adec4442b6352084db5def1ccb291402, type: 2}
+    second: {fileID: 2100000, guid: 64b7aa1248537124cb53060b85fb8787, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: shalter
-    second: {fileID: 2100000, guid: b01ba6412aadc2a44bfac84ef5e4ce70, type: 2}
+      name: tube
+    second: {fileID: 2100000, guid: 9f3d1b405bfb9a24e990b9812ce5d5a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: window frames
-    second: {fileID: 2100000, guid: c913eb521d199624ba268ac39d237566, type: 2}
+      name: tubes
+    second: {fileID: 2100000, guid: a5ba2d097cf3839468140bc9505bb83f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood1
+    second: {fileID: 2100000, guid: 3bbd260a94543c84ea0eed01b9191bb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood2
+    second: {fileID: 2100000, guid: ff23744b296c3e544ad341d791a655d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood3
+    second: {fileID: 2100000, guid: bd09620eb8a0b1840a7118b8365790c3, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

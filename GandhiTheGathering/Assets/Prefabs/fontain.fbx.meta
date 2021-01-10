@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: e6609e22b97482545abcb581cea42156
+guid: cbe9123d5532e05489347278dbc0e832
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fontain
+    second: {fileID: 2100000, guid: d9a4821681e1b0d449f82fbeb174f851, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

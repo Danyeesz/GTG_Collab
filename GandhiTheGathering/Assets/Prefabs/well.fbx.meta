@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d603dbf1e17ccab4ab9f9f2c61ca91d7
+guid: edb1b15ac1729194cbb6eafc089de8e1
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,33 +7,73 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: brick
-    second: {fileID: 2100000, guid: 385ec7b7bed5e294bb94f4ea681ad597, type: 2}
+      name: lever
+    second: {fileID: 2100000, guid: f7db0ed5f4f25ee4f8b5dffffa250966, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: house
-    second: {fileID: 2100000, guid: e8efc0dea3b37f745a635ef5335b4de9, type: 2}
+      name: levers
+    second: {fileID: 2100000, guid: eefd1abc65493d84186f9d3e60589ffe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: inner space
-    second: {fileID: 2100000, guid: 8402cbf713f17c34cbf2239a85921827, type: 2}
+      name: plate1
+    second: {fileID: 2100000, guid: 6a1a366781f15544ca2e8f9fb5d7beec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate2
+    second: {fileID: 2100000, guid: 14e0fc93783fa074783467785eef1e2e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: roof
-    second: {fileID: 2100000, guid: adec4442b6352084db5def1ccb291402, type: 2}
+    second: {fileID: 2100000, guid: 6f1cfb57a842c6043818ee11421bc4d5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: shalter
-    second: {fileID: 2100000, guid: b01ba6412aadc2a44bfac84ef5e4ce70, type: 2}
+      name: roof st
+    second: {fileID: 2100000, guid: c801a97582f243e488456846641cfc14, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: window frames
-    second: {fileID: 2100000, guid: c913eb521d199624ba268ac39d237566, type: 2}
+      name: rope
+    second: {fileID: 2100000, guid: 10baf848c4e71d246a55a244748a5bb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: round1
+    second: {fileID: 2100000, guid: a347fd10e62d4be4f9286907fd9e3d1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: round2
+    second: {fileID: 2100000, guid: a855558b64ad73a4aaef6143606513a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stick
+    second: {fileID: 2100000, guid: 79d0c5baf20e00f4b9223447d96c575d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sticks
+    second: {fileID: 2100000, guid: 8320efe594a20d444ae82bf7bc0736d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone
+    second: {fileID: 2100000, guid: f7291cac3d327e84faa9657664b9e9f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone2
+    second: {fileID: 2100000, guid: 59cea8bdb9fae9c488fa3d985cc31461, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone3
+    second: {fileID: 2100000, guid: 3f2c3dcd7643fed43a44c740de12840f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
