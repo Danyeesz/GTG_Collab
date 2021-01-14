@@ -11,14 +11,12 @@ public class EnemyController : MonoBehaviour
     public LayerMask isGround, isPlayer;
     public bool inSight;
 
-    public Material follower;
-    
-
-
     public Transform dest;
     public Vector3 destV;
     public float destRange, sightRange;
     bool destSet;
+    public float health;
+    
 
 
 
@@ -41,6 +39,14 @@ public class EnemyController : MonoBehaviour
             Chase();
         }
 
+        if (health==0)
+        {
+            gameObject.GetComponent<FollowerController>().enabled = true;
+            transform.GetChild(0).gameObject.SetActive(true);
+            gameObject.GetComponent<EnemyController>().enabled = false;
+            
+        }
+
         
     }
 
@@ -48,13 +54,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            agentE.stoppingDistance = 1.5f;
-            agentE.SetDestination(player.position);
-            gameObject.GetComponent<MeshRenderer>().material = follower;
-            gameObject.tag = "Player";
-
-            
-
+            health = health - 1;
         }
     }
 
@@ -102,7 +102,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-  
+   
   
 
 }
