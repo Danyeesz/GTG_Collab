@@ -8,8 +8,10 @@ public class FollowerController : MonoBehaviour
 {
     public float MaxFaith = 5;
     public float CurrentFaith;
+
     public NavMeshAgent agentF;
     public Transform player;
+
     public Material follower;
     public float sightRange;
     public LayerMask isEnemy;
@@ -39,13 +41,26 @@ public class FollowerController : MonoBehaviour
         {
             
         }
-       
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            MinusFaith(1);
+        }
+
     }
 
     private void Follow() {
 
         agentF.stoppingDistance = 1.5f;
         agentF.SetDestination(player.position);
+
+    }
+
+    private void MinusFaith(float mfaith) 
+    {
+
+        CurrentFaith -= mfaith;
+        FaithBar.SetFaith(CurrentFaith);
 
     }
 
