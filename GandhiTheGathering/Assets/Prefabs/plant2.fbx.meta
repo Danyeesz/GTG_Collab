@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 557975c9e4e105c469f8c15e9365de6e
+guid: ccdb59a4c460f484ca030184faf4e069
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: dirt
+    second: {fileID: 2100000, guid: a53e050c5bf67db44ac8dc7b9214d1ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: pot2
-    second: {fileID: 2100000, guid: 8ebd8404fac697b4e81aea445d104eed, type: 2}
+    second: {fileID: 2100000, guid: c9fc085a44192f440ab3c4939f5a307d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: succulent
-    second: {fileID: 2100000, guid: b83f536dc0ac4ac49a34fb36c3ee3bf5, type: 2}
+    second: {fileID: 2100000, guid: cf74adb4c415b144d8fe0d1d28de63d7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

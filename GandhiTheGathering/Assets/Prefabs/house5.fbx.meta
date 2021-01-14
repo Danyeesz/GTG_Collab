@@ -27,6 +27,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: insides
+    second: {fileID: 2100000, guid: 4455f5c1f397fcb48873692884dd1dc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: parapet
     second: {fileID: 2100000, guid: af5eccc7481834f41a2a95a74c5ad38d, type: 2}
   - first:

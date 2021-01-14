@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7dc7ded2a369ff48bbc9261639e0bf8
+guid: 96be5d5760b71af4390bb0acfda33b3c
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,28 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: igles
-    second: {fileID: 2100000, guid: b4562a7c55b021e4e86f4d5bad2de23d, type: 2}
+      name: branch
+    second: {fileID: 2100000, guid: 633e26de09ed9a24a8705a3547a395a7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pot1
-    second: {fileID: 2100000, guid: 25d84cea3f852f449b19627bb5d7c495, type: 2}
+      name: dirt
+    second: {fileID: 2100000, guid: e2bef934687519f49ba0b1bb51ebee1b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: stvol
-    second: {fileID: 2100000, guid: 45e6c1586002cf74391e4171e20eb5b7, type: 2}
+      name: flower1
+    second: {fileID: 2100000, guid: bb7db421dd64be04bacb9e675c430b6a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: stvol2
-    second: {fileID: 2100000, guid: 0d315c0040fa4ef4da7869b137989e7a, type: 2}
+      name: flower2
+    second: {fileID: 2100000, guid: d08cb50480447ad4c87a55e9f7c58546, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: stvol3
-    second: {fileID: 2100000, guid: 5498585e4bf39e74a9d7f22f70108821, type: 2}
+      name: flower3
+    second: {fileID: 2100000, guid: 430b6d50602adab4c8808b9e6b39f85a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pot3
+    second: {fileID: 2100000, guid: 53bbd67d76b1ac646a7d16cfaf188019, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
