@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     
     public NavMeshAgent agentE;
     public Transform player;
-    public LayerMask isGround, isPlayer;
+    public LayerMask isGround, isPlayer, isFollower;
     public bool inSight;
 
     public Transform dest;
@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     public float destRange, sightRange;
     bool destSet;
     public float health;
+
+
     
 
 
@@ -30,12 +32,16 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward),out hit,sightRange,isPlayer))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer)|| Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer))
         {
             inSight = true;
         }
+     
        
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)*sightRange,Color.yellow);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * sightRange, Color.yellow);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * sightRange, Color.yellow);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * sightRange, Color.yellow);
 
 
         if (!inSight)
@@ -45,6 +51,7 @@ public class EnemyController : MonoBehaviour
         else if (inSight)
         {
             Chase();
+            destV = player.position;
         }
 
         if (health==0)
@@ -88,10 +95,8 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Chase() {
-       
-            agentE.SetDestination(player.position);
-        
-        
+
+        agentE.SetDestination(destV) ;
 
     }
 

@@ -30,8 +30,9 @@ public class FollowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inSight = Physics.CheckSphere(transform.position, sightRange, isEnemy);
+     
         gameObject.tag = "Player";
+        gameObject.layer = 9;
         gameObject.GetComponent<MeshRenderer>().material = follower;
         if (!inSight)
         {
@@ -41,12 +42,6 @@ public class FollowerController : MonoBehaviour
         {
             
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MinusFaith(1);
-        }
-
         if (CurrentFaith<=0)
         {
             Destroy(gameObject);
@@ -73,7 +68,7 @@ public class FollowerController : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            FaithBar.SetFaith(CurrentFaith - 1);
+            MinusFaith(1);
         }
     }
 }
