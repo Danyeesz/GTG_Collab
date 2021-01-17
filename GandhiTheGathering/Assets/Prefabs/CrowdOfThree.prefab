@@ -237,7 +237,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -7.45459, y: -6.6788025}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -411,8 +411,8 @@ MonoBehaviour:
   dest: {fileID: 8121479088352844042}
   destV: {x: 0, y: 0, z: 0}
   destRange: 5
-  sightRange: 5
-  health: 5
+  sightRange: 10
+  health: 100
 --- !u!114 &7993674682745796206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,10 +444,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2663111872036242608}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3110519568899593689
@@ -947,8 +947,8 @@ MonoBehaviour:
   dest: {fileID: 8121479088352844042}
   destV: {x: 0, y: 0, z: 0}
   destRange: 5
-  sightRange: 5
-  health: 5
+  sightRange: 10
+  health: 100
 --- !u!114 &3176190379357443895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,10 +980,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992345931870622856}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6626854435473978338
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   dest: {fileID: 8121479088352844042}
   destV: {x: 0, y: 0, z: 0}
   destRange: 5
-  sightRange: 5
-  health: 5
+  sightRange: 10
+  health: 100
 --- !u!114 &6957185754665650971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,10 +1369,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8300413590333356337}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8683598098752288819
@@ -1428,7 +1428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3867552148055046994
 RectTransform:
   m_ObjectHideFlags: 0

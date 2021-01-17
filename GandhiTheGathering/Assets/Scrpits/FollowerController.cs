@@ -47,6 +47,11 @@ public class FollowerController : MonoBehaviour
             MinusFaith(1);
         }
 
+        if (CurrentFaith<=0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void Follow() {
@@ -64,9 +69,9 @@ public class FollowerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
             FaithBar.SetFaith(CurrentFaith - 1);
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class EnemyController : MonoBehaviour
 {
     
@@ -28,7 +29,14 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        inSight = Physics.CheckSphere(transform.position, sightRange, isPlayer);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward),out hit,sightRange,isPlayer))
+        {
+            inSight = true;
+        }
+       
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)*sightRange,Color.yellow);
+
 
         if (!inSight)
         {
@@ -50,9 +58,9 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.tag == "Player")
         {
             health = health - 1;
         }
