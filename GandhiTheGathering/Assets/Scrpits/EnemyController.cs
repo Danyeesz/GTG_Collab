@@ -32,7 +32,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer)|| Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer)|| 
+            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, sightRange, isPlayer)|| 
+            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, sightRange, isPlayer)||
+            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isPlayer))
         {
             inSight = true;
         }
