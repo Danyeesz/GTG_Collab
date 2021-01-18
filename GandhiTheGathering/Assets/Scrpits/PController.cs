@@ -7,6 +7,7 @@ public class PController : MonoBehaviour
 {
     public Camera camP;
     public NavMeshAgent agentP;
+    
    
     // Update is called once per frame
     void Update()
@@ -22,9 +23,9 @@ public class PController : MonoBehaviour
             }
             
         }
-
+        Debug.Log(FollowerController.f_number);
     }
-
+    
     
     
 }
