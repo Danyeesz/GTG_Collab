@@ -7,7 +7,7 @@ public class InspirationManager : MonoBehaviour
 {
     public Insp_Slider InspBar;
     int fnumber;
-    public float insp;
+    static public float insp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +21,11 @@ public class InspirationManager : MonoBehaviour
         
         if (fnumber < FollowerController.f_number)
         {
-            insp += 0.2f;
+            insp += 0.1f;
             InspBar.SetInsp(insp);
         }
         fnumber = FollowerController.f_number;
     }
 
-    private void Increase(float inspiration)
-    {
-
-        
-
-    }
+   
 }

@@ -23,7 +23,7 @@ public class PController : MonoBehaviour
             }
             
         }
-        Debug.Log(FollowerController.f_number);
+        
     }
     
     

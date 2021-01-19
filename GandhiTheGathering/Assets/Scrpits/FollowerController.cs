@@ -44,6 +44,7 @@ public class FollowerController : MonoBehaviour
             enemy.position = hit.transform.position;
         }
 
+       
 
         else
         {
@@ -93,6 +94,16 @@ public class FollowerController : MonoBehaviour
         FaithBar.SetFaith(CurrentFaith);
 
     }
+
+    public void Restore()
+    {
+
+        CurrentFaith = 5f;
+        FaithBar.SetFaith(CurrentFaith);
+
+    }
+
+
 
     private void OnTriggerEnter(Collider collision)
     {
