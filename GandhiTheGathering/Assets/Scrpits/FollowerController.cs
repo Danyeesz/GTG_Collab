@@ -70,7 +70,10 @@ public class FollowerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Restore();
+        }
     }
 
     private void Follow() {
