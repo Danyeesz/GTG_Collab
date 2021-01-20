@@ -9,6 +9,8 @@ public class NeedSpawner : MonoBehaviour
     public float minTime = 5;
     private float time;
     private float spawnTime;
+    public float needtime;
+    public float timer;
 
     int randm;
 
@@ -22,7 +24,8 @@ public class NeedSpawner : MonoBehaviour
         time = minTime;
         Canvas canvas = gameObject.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
-        canvas.worldCamera = Camera.main;
+        canvas.worldCamera = GameObject.FindWithTag("Camera").GetComponent<Camera>();
+        timer = needtime;
 
 
         FoodVsEqu = GameObject.FindGameObjectWithTag("FvsE").GetComponent<Slider>();
@@ -44,15 +47,19 @@ public class NeedSpawner : MonoBehaviour
             SpawnButton();
             SetRandomTime();
         }
+       
 
     }
 
     void SpawnButton()
     {
         time = 0;
-        randm = Random.Range(0, 5);
+        randm = Random.Range(1, 6);
         transform.GetChild(randm).gameObject.SetActive(true);
-
+        if ((timer - Time.deltaTime )<= 0)
+        {
+            transform.GetChild(randm).gameObject.SetActive(false);
+        }
     }
     
     void SetRandomTime()
@@ -66,20 +73,14 @@ public class NeedSpawner : MonoBehaviour
         transform.GetChild(randm).gameObject.SetActive(false);
     }
 
-
-
-    private void Update()
-    {
-       
-    }
     
     public void SetNeeds(float need)
     {
-        if (randm==0)
+        if (randm==1)
         {
             FoodVsEqu.value -= need;
         }
-        else if (randm == 1)
+        else if (randm == 2)
         {
             FoodVsEqu.value += need;
         }
@@ -93,11 +94,11 @@ public class NeedSpawner : MonoBehaviour
         }
         else if (randm == 5)
         {
-            HinduVsReli.value += need;
+            HinduVsReli.value -= need;
         }
         else if (randm == 6)
         {
-            HinduVsReli.value -= need;
+            HinduVsReli.value += need;
         }
         
        

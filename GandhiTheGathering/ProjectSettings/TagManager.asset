@@ -8,6 +8,7 @@ TagManager:
   - BvsI
   - HvsR
   - FvsE
+  - Camera
   layers:
   - Default
   - TransparentFX

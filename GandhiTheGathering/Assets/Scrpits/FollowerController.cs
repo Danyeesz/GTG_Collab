@@ -18,16 +18,18 @@ public class FollowerController : MonoBehaviour
     public float sightRange;
     public LayerMask isEnemy;
     public bool inSight;
+
+    Canvas canvas;
     
 
-    public FaithBar FaithBar;
+    public FaithBar faithBar;
 
     private void Start()
     {
         agentF = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         CurrentFaith = MaxFaith;
-        FaithBar.SetMaxFaith(MaxFaith);
+        faithBar.SetMaxFaith(MaxFaith);
         f_number++;
     }
 
@@ -97,7 +99,7 @@ public class FollowerController : MonoBehaviour
     {
 
         CurrentFaith -= mfaith;
-        FaithBar.SetFaith(CurrentFaith);
+        faithBar.SetFaith(CurrentFaith);
 
     }
 
@@ -105,7 +107,7 @@ public class FollowerController : MonoBehaviour
     {
 
         CurrentFaith = 5f;
-        FaithBar.SetFaith(CurrentFaith);
+        faithBar.SetFaith(CurrentFaith);
         Debug.Log("Alma");
 
     }
