@@ -342,6 +342,7 @@ MonoBehaviour:
   maxTime: 20
   minTime: 5
   needtime: 3
+  timer: 0
   FoodVsEqu: {fileID: 0}
   HinduVsReli: {fileID: 0}
   BritainVsIndia: {fileID: 0}
@@ -1286,7 +1287,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1326,7 +1327,9 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 30
-  health: 20
+  P_health: 10
+  Enemy: {fileID: 2100000, guid: 0bb012af472407a4fa8114baef171e57, type: 2}
+  destDist: {x: 0, y: 0, z: 0}
 --- !u!64 &1747821816863453557
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1353,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4826225dfbbf9c84d9df324783707a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxFaith: 5
+  MaxFaith: 20
   CurrentFaith: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
@@ -1365,6 +1368,7 @@ MonoBehaviour:
     m_Bits: 1024
   inSight: 0
   faithBar: {fileID: 8206504091746276369}
+  InspBar: {fileID: 0}
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0

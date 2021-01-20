@@ -47,14 +47,17 @@ public class NeedSpawner : MonoBehaviour
             SpawnButton();
             SetRandomTime();
         }
-       
+        if (BritainVsIndia.value == BritainVsIndia.maxValue || BritainVsIndia.value == BritainVsIndia.minValue)
+        {
+
+        }
 
     }
 
     void SpawnButton()
     {
         time = 0;
-        randm = Random.Range(1, 6);
+        randm = Random.Range(1, 7);
         transform.GetChild(randm).gameObject.SetActive(true);
         if ((timer - Time.deltaTime )<= 0)
         {

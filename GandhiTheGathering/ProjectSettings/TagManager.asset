@@ -9,6 +9,7 @@ TagManager:
   - HvsR
   - FvsE
   - Camera
+  - Insp_Slider
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,8 @@ using UnityEngine.AI;
 
 public class FollowerController : MonoBehaviour
 {
-    public float MaxFaith = 5;
-    static public float CurrentFaith;
+    public float MaxFaith;
+    public float CurrentFaith;
     public static int f_number;
 
     public NavMeshAgent agentF;
@@ -18,11 +18,10 @@ public class FollowerController : MonoBehaviour
     public float sightRange;
     public LayerMask isEnemy;
     public bool inSight;
-
-    Canvas canvas;
     
 
     public FaithBar faithBar;
+    public Slider InspBar;
 
     private void Start()
     {
@@ -31,6 +30,10 @@ public class FollowerController : MonoBehaviour
         CurrentFaith = MaxFaith;
         faithBar.SetMaxFaith(MaxFaith);
         f_number++;
+        InspBar = GameObject.FindGameObjectWithTag("Insp_Slider").GetComponent<Slider>();
+        gameObject.tag = "Player";
+        gameObject.layer = 9;
+        gameObject.GetComponent<MeshRenderer>().material = follower;
     }
 
     // Update is called once per frame
@@ -52,9 +55,7 @@ public class FollowerController : MonoBehaviour
         {
             inSight = false;
         }
-        gameObject.tag = "Player";
-        gameObject.layer = 9;
-        gameObject.GetComponent<MeshRenderer>().material = follower;
+       
         if (!inSight)
         {
             Follow();
@@ -63,7 +64,7 @@ public class FollowerController : MonoBehaviour
         {
             Chase();
             Vector3 Pdistance = player.position - transform.position;
-            if (Pdistance.magnitude >=30)
+            if (Pdistance.magnitude >=400)
             {
                 Follow();
             }
@@ -106,9 +107,9 @@ public class FollowerController : MonoBehaviour
     public void Restore()
     {
 
-        CurrentFaith = 5f;
+        CurrentFaith = MaxFaith;
         faithBar.SetFaith(CurrentFaith);
-        Debug.Log("Alma");
+        InspBar.value = 0f;
 
     }
 

@@ -16,8 +16,9 @@ public class EnemyController : MonoBehaviour
     public Vector3 destV;
     public float destRange, sightRange;
     bool destSet;
-    public float health;
-
+    public float P_health;
+    float health;
+    public Material Enemy;
     public Vector3 destDist;
 
 
@@ -28,10 +29,12 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+        
+        gameObject.GetComponent<MeshRenderer>().material = Enemy;
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         transform.GetChild(0).gameObject.SetActive(false);
-        health = 50;
+        health = P_health;
     }
 
     void Update()

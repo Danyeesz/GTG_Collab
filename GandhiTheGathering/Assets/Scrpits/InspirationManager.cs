@@ -9,13 +9,13 @@ public class InspirationManager : MonoBehaviour
     int fnumber;
     static public float insp;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         fnumber = 0;
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         
