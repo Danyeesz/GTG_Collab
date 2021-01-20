@@ -61,14 +61,17 @@ public class FollowerController : MonoBehaviour
         {
             Chase();
             Vector3 Pdistance = player.position - transform.position;
-            if (Pdistance.magnitude >30)
+            if (Pdistance.magnitude >=30)
             {
                 Follow();
             }
         }
         if (CurrentFaith<=0)
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<EnemyController>().enabled = true;
+            gameObject.GetComponent<FollowerController>().enabled = false;
+           
+           
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -103,6 +106,7 @@ public class FollowerController : MonoBehaviour
 
         CurrentFaith = 5f;
         FaithBar.SetFaith(CurrentFaith);
+        Debug.Log("Alma");
 
     }
 

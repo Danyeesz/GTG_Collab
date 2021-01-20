@@ -27,6 +27,8 @@ public class EnemyController : MonoBehaviour
     {
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
+        transform.GetChild(0).gameObject.SetActive(false);
+        health = 50;
     }
 
     void Update()
@@ -54,7 +56,7 @@ public class EnemyController : MonoBehaviour
         else if (inSight)
         {
             Chase();
-            destV = player.position;
+        
         }
 
         if (health==0)
@@ -89,7 +91,7 @@ public class EnemyController : MonoBehaviour
 
         Vector3 destDist = transform.position - destV;
 
-        if (destDist.magnitude <1f)
+        if (destDist.magnitude <= 2f)
         {
             destSet = false;
         }
@@ -99,7 +101,7 @@ public class EnemyController : MonoBehaviour
 
     private void Chase() {
 
-        agentE.SetDestination(destV) ;
+        agentE.SetDestination(player.position) ;
 
     }
 
