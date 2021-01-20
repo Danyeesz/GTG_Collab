@@ -21,7 +21,7 @@ public class NeedSpawner : MonoBehaviour
         SetRandomTime();
         time = minTime;
         Canvas canvas = gameObject.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.s;
+        canvas.renderMode = RenderMode.WorldSpace;
         canvas.worldCamera = Camera.main;
 
 
