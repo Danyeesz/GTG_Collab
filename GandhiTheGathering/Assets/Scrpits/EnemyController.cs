@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public float destRange, sightRange;
     bool destSet;
     public float health;
+    public float MaxHealth = 10;
 
     public Vector3 destDist;
 
@@ -31,7 +32,7 @@ public class EnemyController : MonoBehaviour
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         transform.GetChild(0).gameObject.SetActive(false);
-        health = 50;
+        health = MaxHealth;
     }
 
     void Update()
