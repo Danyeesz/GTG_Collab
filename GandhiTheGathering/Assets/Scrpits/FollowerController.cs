@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class FollowerController : MonoBehaviour
 {
     public float MaxFaith = 5;
-    public float CurrentFaith;
+    static public float CurrentFaith;
     public static int f_number;
 
     public NavMeshAgent agentF;

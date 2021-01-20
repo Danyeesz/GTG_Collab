@@ -18,8 +18,11 @@ public class EnemyController : MonoBehaviour
     bool destSet;
     public float health;
 
+    public Vector3 destDist;
 
-    
+
+
+
 
 
 
@@ -40,6 +43,7 @@ public class EnemyController : MonoBehaviour
             Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isPlayer))
         {
             inSight = true;
+           
         }
      
        
@@ -63,6 +67,7 @@ public class EnemyController : MonoBehaviour
         {
             gameObject.GetComponent<FollowerController>().enabled = true;
             transform.GetChild(0).gameObject.SetActive(true);
+            this.transform.parent = GameObject.Find("Followers").transform;
             gameObject.GetComponent<EnemyController>().enabled = false;
             
         }
@@ -89,7 +94,7 @@ public class EnemyController : MonoBehaviour
             agentE.SetDestination(dest.position);
         }
 
-        Vector3 destDist = transform.position - destV;
+        destDist = transform.position - destV;
 
         if (destDist.magnitude <= 2f)
         {
