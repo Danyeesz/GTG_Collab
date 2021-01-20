@@ -20,10 +20,19 @@ public class NeedSpawner : MonoBehaviour
     {
         SetRandomTime();
         time = minTime;
+        Canvas canvas = gameObject.GetComponent<Canvas>();
+        canvas.renderMode = RenderMode.s;
+        canvas.worldCamera = Camera.main;
 
+
+        FoodVsEqu = GameObject.FindGameObjectWithTag("FvsE").GetComponent<Slider>();
+        HinduVsReli = GameObject.FindGameObjectWithTag("HvsR").GetComponent<Slider>();
+        BritainVsIndia = GameObject.FindGameObjectWithTag("BvsI").GetComponent<Slider>();
         FoodVsEqu.value = 0.5f;
         HinduVsReli.value = 0.5f;
         BritainVsIndia.value = 0.5f;
+       
+       
     }
 
     void FixedUpdate()
@@ -53,7 +62,7 @@ public class NeedSpawner : MonoBehaviour
 
     public void ButtonClicked()
     {
-        SetNeeds(0.2f);
+        SetNeeds(0.1f);
         transform.GetChild(randm).gameObject.SetActive(false);
     }
 
@@ -68,11 +77,11 @@ public class NeedSpawner : MonoBehaviour
     {
         if (randm==0)
         {
-            HinduVsReli.value -= need;
+            FoodVsEqu.value -= need;
         }
         else if (randm == 1)
         {
-            HinduVsReli.value += need;
+            FoodVsEqu.value += need;
         }
         else if (randm == 3)
         {
@@ -84,11 +93,11 @@ public class NeedSpawner : MonoBehaviour
         }
         else if (randm == 5)
         {
-            FoodVsEqu.value -= need;
+            HinduVsReli.value += need;
         }
         else if (randm == 6)
         {
-            FoodVsEqu.value += need;
+            HinduVsReli.value -= need;
         }
         
        

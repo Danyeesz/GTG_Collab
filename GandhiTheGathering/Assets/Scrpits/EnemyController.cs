@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
         
         }
 
-        if (health==0)
+        if (health<=0)
         {
             gameObject.GetComponent<FollowerController>().enabled = true;
             transform.GetChild(0).gameObject.SetActive(true);
