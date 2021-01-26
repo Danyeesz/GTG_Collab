@@ -16,6 +16,9 @@ public class CrowdController : MonoBehaviour
         Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
         Instantiate(CrowdOfFive, Spawn2.transform.position, Quaternion.identity);
         Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
+        Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
+        Instantiate(CrowdOfFive, Spawn2.transform.position, Quaternion.identity);
+        Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

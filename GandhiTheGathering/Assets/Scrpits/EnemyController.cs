@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     public Material Enemy;
     public Vector3 destDist;
 
+    private Collider[] overlaps;
 
 
 
@@ -36,25 +37,16 @@ public class EnemyController : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         health = P_health;
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isPlayer)|| 
-            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, sightRange, isPlayer)|| 
-            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, sightRange, isPlayer)||
-            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isPlayer))
-        {
-            inSight = true;
-           
-        }
-     
-       
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)*sightRange,Color.yellow);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * sightRange, Color.yellow);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * sightRange, Color.yellow);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * sightRange, Color.yellow);
+        
 
+        
 
         if (!inSight)
         {
@@ -78,6 +70,7 @@ public class EnemyController : MonoBehaviour
         
     }
 
+   
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
@@ -110,6 +103,7 @@ public class EnemyController : MonoBehaviour
     private void Chase() {
 
         agentE.SetDestination(player.position) ;
+        destSet = true;
 
     }
 

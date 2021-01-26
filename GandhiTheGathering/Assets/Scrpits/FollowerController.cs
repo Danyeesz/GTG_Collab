@@ -31,7 +31,7 @@ public class FollowerController : MonoBehaviour
         faithBar.SetMaxFaith(MaxFaith);
         f_number++;
         InspBar = GameObject.FindGameObjectWithTag("Insp_Slider").GetComponent<Slider>();
-        gameObject.tag = "Player";
+        
         gameObject.layer = 9;
         gameObject.GetComponent<MeshRenderer>().material = follower;
     }

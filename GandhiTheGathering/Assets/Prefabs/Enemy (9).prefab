@@ -1203,9 +1203,9 @@ GameObject:
   - component: {fileID: 8246924840521580182}
   - component: {fileID: 1947217396463993980}
   - component: {fileID: 8566706661525966174}
-  - component: {fileID: 1747821816863453557}
   - component: {fileID: 8272801316338589620}
   - component: {fileID: -2598083320149567580}
+  - component: {fileID: -5122151673931773617}
   m_Layer: 10
   m_Name: Enemy (9)
   m_TagString: Enemy
@@ -1326,24 +1326,10 @@ MonoBehaviour:
   dest: {fileID: 0}
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
-  sightRange: 30
+  sightRange: 5
   P_health: 10
   Enemy: {fileID: 2100000, guid: 0bb012af472407a4fa8114baef171e57, type: 2}
   destDist: {x: 0, y: 0, z: 0}
---- !u!64 &1747821816863453557
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855177614052050522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8272801316338589620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,3 +1371,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!136 &-5122151673931773617
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855177614052050522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
