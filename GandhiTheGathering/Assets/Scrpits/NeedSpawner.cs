@@ -31,9 +31,6 @@ public class NeedSpawner : MonoBehaviour
         FoodVsEqu = GameObject.FindGameObjectWithTag("FvsE").GetComponent<Slider>();
         HinduVsReli = GameObject.FindGameObjectWithTag("HvsR").GetComponent<Slider>();
         BritainVsIndia = GameObject.FindGameObjectWithTag("BvsI").GetComponent<Slider>();
-        FoodVsEqu.value = 0.5f;
-        HinduVsReli.value = 0.5f;
-        BritainVsIndia.value = 0.5f;
        
        
     }

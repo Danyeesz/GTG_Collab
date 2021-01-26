@@ -25,15 +25,30 @@ public class FollowerController : MonoBehaviour
 
     private void Start()
     {
+       
+    }
+
+    private void OnEnable()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+        this.transform.parent = GameObject.Find("Followers").transform;
+        f_number++;
+        gameObject.tag = "Player";
+        gameObject.layer = 9;
         agentF = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         CurrentFaith = MaxFaith;
         faithBar.SetMaxFaith(MaxFaith);
-        f_number++;
+
         InspBar = GameObject.FindGameObjectWithTag("Insp_Slider").GetComponent<Slider>();
-        
-        gameObject.layer = 9;
+
         gameObject.GetComponent<MeshRenderer>().material = follower;
+
+    }
+
+    private void OnDisable()
+    {
+        gameObject.GetComponent<EnemyController>().enabled = true;
     }
 
     // Update is called once per frame
@@ -49,7 +64,7 @@ public class FollowerController : MonoBehaviour
             enemy.position = hit.transform.position;
         }
 
-       
+
 
         else
         {
@@ -71,7 +86,7 @@ public class FollowerController : MonoBehaviour
         }
         if (CurrentFaith<=0)
         {
-            gameObject.GetComponent<EnemyController>().enabled = true;
+
             gameObject.GetComponent<FollowerController>().enabled = false;
            
            
