@@ -33,7 +33,15 @@ public class EnemyController : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
-        
+        destSet = false;
+        agentE.stoppingDistance = 0f;
+
+        float randomZ = UnityEngine.Random.Range(-destRange, destRange);
+        float randomX = UnityEngine.Random.Range(-destRange, destRange);
+        destV = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        dest.position = destV;
+        Patrol();
+
     }
 
     private void OnDisable()
@@ -59,11 +67,11 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Collider[] colliders = new Collider[5000];
+        Collider[] colliders = new Collider[30];
         colliders = Physics.OverlapSphere(transform.position, sightRange, isPlayer);
         for (int i = 0; i < colliders.Length; i++)
         {
-
+            Debug.Log(colliders[i].name);
             if (colliders[i].tag == "Player")
             {
                 Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
@@ -71,12 +79,13 @@ public class EnemyController : MonoBehaviour
 
                 Ray ray = new Ray(transform.position, colliders[i].transform.position - transform.position);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, sightRange))
+                if (Physics.Raycast(ray, out hit, sightRange,isPlayer))
                 {
+                    Debug.Log(hit.transform.name);
                     if (hit.transform.tag == "Player")
                     {
                         inSight = true;
-
+                        
                     }
 
                 }
@@ -101,6 +110,7 @@ public class EnemyController : MonoBehaviour
         else if (inSight)
         {
             Chase();
+           
         
         }
 
@@ -121,6 +131,7 @@ public class EnemyController : MonoBehaviour
         if (collision.tag == "Player")
         {
             health = health - 1;
+            inSight = true;
         }
     }
 
@@ -147,7 +158,9 @@ public class EnemyController : MonoBehaviour
 
     private void Chase() {
 
-        agentE.SetDestination(player.position) ;
+        destV = player.position;
+        dest.position = destV;
+        agentE.SetDestination(dest.position) ;
         destSet = true;
 
     }

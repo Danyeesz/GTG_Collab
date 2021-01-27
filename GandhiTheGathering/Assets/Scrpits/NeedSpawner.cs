@@ -14,6 +14,8 @@ public class NeedSpawner : MonoBehaviour
 
     int randm;
 
+    GameObject FollowerHolder;
+
     public Slider FoodVsEqu;
     public Slider HinduVsReli;
     public Slider BritainVsIndia;
@@ -27,6 +29,7 @@ public class NeedSpawner : MonoBehaviour
         canvas.worldCamera = GameObject.FindWithTag("Camera").GetComponent<Camera>();
         timer = needtime;
 
+        FollowerHolder = GameObject.Find("Followers");
 
         FoodVsEqu = GameObject.FindGameObjectWithTag("FvsE").GetComponent<Slider>();
         HinduVsReli = GameObject.FindGameObjectWithTag("HvsR").GetComponent<Slider>();
@@ -44,8 +47,34 @@ public class NeedSpawner : MonoBehaviour
             SpawnButton();
             SetRandomTime();
         }
+       
         if (BritainVsIndia.value == BritainVsIndia.maxValue || BritainVsIndia.value == BritainVsIndia.minValue)
         {
+            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+            Transform follower = FollowerHolder.transform.GetChild(randomF);
+            follower.GetComponent<FollowerController>().enabled = false;
+            follower.GetComponent<EnemyController>().enabled = true;
+            BritainVsIndia.value = 0.5f;
+
+        }
+        
+        if (FoodVsEqu.value == FoodVsEqu.maxValue || FoodVsEqu.value == FoodVsEqu.minValue)
+        {
+            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+            Transform follower = FollowerHolder.transform.GetChild(randomF);
+            follower.GetComponent<FollowerController>().enabled = false;
+            follower.GetComponent<EnemyController>().enabled = true;
+            FoodVsEqu.value = 0.5f;
+
+        }
+        
+        if (HinduVsReli.value == HinduVsReli.maxValue || HinduVsReli.value == HinduVsReli.minValue)
+        {
+            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+            Transform follower = FollowerHolder.transform.GetChild(randomF);
+            follower.GetComponent<FollowerController>().enabled = false;
+            follower.GetComponent<EnemyController>().enabled = true;
+            HinduVsReli.value = 0.5f;
 
         }
 

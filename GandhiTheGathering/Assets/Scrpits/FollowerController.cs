@@ -23,10 +23,7 @@ public class FollowerController : MonoBehaviour
     public FaithBar faithBar;
     public Slider InspBar;
 
-    private void Start()
-    {
-       
-    }
+    
 
     private void OnEnable()
     {
