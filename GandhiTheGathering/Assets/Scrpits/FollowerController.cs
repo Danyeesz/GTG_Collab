@@ -90,7 +90,7 @@ public class FollowerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RestoreFaith.
+            Restore(1f);
         }
     }
 
