@@ -13,9 +13,9 @@ public class Insp_Slider : MonoBehaviour
         slider.value = 0;
     }
     // Start is called before the first frame update
-    public void SetInsp(float faith)
+    public void SetInsp(float insp)
     {
-        slider.value = faith;
+        slider.value = insp;
     }
 
     public void SetMaxInsp(float insp)

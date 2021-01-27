@@ -90,7 +90,7 @@ public class FollowerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Restore();
+            RestoreFaith.
         }
     }
 
@@ -116,10 +116,10 @@ public class FollowerController : MonoBehaviour
 
     }
 
-    public void Restore()
+    public void Restore(float faith)
     {
-
-        CurrentFaith = MaxFaith;
+       
+        CurrentFaith += faith;
         faithBar.SetFaith(CurrentFaith);
         InspBar.value = 0f;
 
