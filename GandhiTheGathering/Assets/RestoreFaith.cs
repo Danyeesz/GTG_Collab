@@ -11,26 +11,37 @@ public class RestoreFaith : MonoBehaviour
 
     public  void Restore()
     {
-        foreach (Transform child in transform)
-        {
+        FollowerController [] followerControllers= transform.GetComponentsInChildren<FollowerController>();
 
-            
-            if (InspBar.slider.value>=0.25f && InspBar.slider.value < 0.5f)
+        if (InspBar.slider.value >= 0.25f && InspBar.slider.value < 0.5f)
+        {
+            foreach (FollowerController follower in followerControllers)
             {
-                GetComponentInChildren<FollowerController>().Restore(4f);
+                follower.Restore(4f);
                 InspBar.SetInsp(0f);
             }
-            else if (InspBar.slider.value >= 0.5f && InspBar.slider.value < 0.75f)
-            {
-                GetComponentInChildren<FollowerController>().Restore(8f);
-                InspBar.SetInsp(0f);
-            }
-            else if (InspBar.slider.value >= 0.75f && InspBar.slider.value <= 1f)
-            {
-                GetComponentInChildren<FollowerController>().Restore(12f);
-                InspBar.SetInsp(0f);
-            }
+
         }
+        else if (InspBar.slider.value >= 0.5f && InspBar.slider.value < 0.75f)
+        {
+            foreach (FollowerController follower in followerControllers)
+            {
+                follower.Restore(8f);
+                InspBar.SetInsp(0f);
+            }
+
+        }
+        else if (InspBar.slider.value >= 0.75f && InspBar.slider.value <= 1f)
+        {
+            foreach (FollowerController follower in followerControllers)
+            {
+                follower.Restore(12f);
+                InspBar.SetInsp(0f);
+            }
+
+        }
+
+
     }
     
 }

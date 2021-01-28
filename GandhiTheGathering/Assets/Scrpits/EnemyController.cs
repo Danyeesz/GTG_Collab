@@ -50,14 +50,6 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        
-        
-        
-        
-        
-    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -67,7 +59,7 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Collider[] colliders = new Collider[30];
+        Collider[] colliders = new Collider[300];
         colliders = Physics.OverlapSphere(transform.position, sightRange, isPlayer);
         for (int i = 0; i < colliders.Length; i++)
         {
