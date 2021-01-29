@@ -7,8 +7,14 @@ public class PController : MonoBehaviour
 {
     public Camera camP;
     public NavMeshAgent agentP;
-    
-   
+
+    Animator animator;
+    private void Start()
+    {
+        
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +29,8 @@ public class PController : MonoBehaviour
             }
             
         }
+
+      
         
     }
     

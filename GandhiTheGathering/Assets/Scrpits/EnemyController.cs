@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         destSet = false;
-        agentE.stoppingDistance = 0f;
+        
 
         float randomZ = UnityEngine.Random.Range(-destRange, destRange);
         float randomX = UnityEngine.Random.Range(-destRange, destRange);
