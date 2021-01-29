@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, sightRange,isPlayer))
                 {
-                    Debug.Log(hit.transform.name);
+                    
                     if (hit.transform.tag == "Player")
                     {
                         inSight = true;
