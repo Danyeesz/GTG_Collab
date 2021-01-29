@@ -1973,6 +1973,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camP: {fileID: 1469342108}
   agentP: {fileID: 325724834}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &332625982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7efaa0086e62a9a488acaf9f0e9813a0, type: 3}
@@ -11683,6 +11686,14 @@ PrefabInstance:
     - target: {fileID: 1834113387730670564, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_Speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834113387730670564, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
+      propertyPath: m_Acceleration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834113387730670564, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 1834113387730670567, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_Name

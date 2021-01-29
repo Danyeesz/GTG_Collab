@@ -7,6 +7,7 @@ public class PController : MonoBehaviour
 {
     public Camera camP;
     public NavMeshAgent agentP;
+    public LayerMask Ground;
 
     Animator animator;
     private void Start()
@@ -23,9 +24,11 @@ public class PController : MonoBehaviour
             Ray ray = camP.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Ground))
             {
+               
                 agentP.SetDestination(hit.point);
+               
             }
             
         }
