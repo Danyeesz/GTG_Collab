@@ -1255,7 +1255,7 @@ Transform:
   m_GameObject: {fileID: 8855177614052050522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 2001327668645245558}
   - {fileID: 2576838063059966471}
@@ -1365,6 +1365,7 @@ MonoBehaviour:
   health: 0
   Enemy: {fileID: 2100000, guid: 0bb012af472407a4fa8114baef171e57, type: 2}
   destDist: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!114 &8272801316338589620
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public float health;
     public Material Enemy;
     public Vector3 destDist;
-
+    public Animator animator;
     
 
 
@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
         destV = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
         dest.position = destV;
         Patrol();
+        animator = GetComponentInChildren<Animator>();
 
     }
 
@@ -124,6 +125,8 @@ public class EnemyController : MonoBehaviour
         {
             health = health - 1;
             inSight = true;
+            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            animator.SetBool("IsArguing", true);
         }
     }
 
