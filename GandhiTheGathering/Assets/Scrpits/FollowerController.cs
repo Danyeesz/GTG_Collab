@@ -23,7 +23,9 @@ public class FollowerController : MonoBehaviour
     public FaithBar faithBar;
     public Slider InspBar;
 
-    
+    public Animator animator;
+
+
 
     private void OnEnable()
     {
@@ -40,6 +42,8 @@ public class FollowerController : MonoBehaviour
         InspBar = GameObject.FindGameObjectWithTag("Insp_Slider").GetComponent<Slider>();
 
         gameObject.GetComponent<MeshRenderer>().material = follower;
+
+        animator = GetComponentInChildren<Animator>();
 
     }
 
@@ -113,7 +117,8 @@ public class FollowerController : MonoBehaviour
 
         CurrentFaith -= mfaith;
         faithBar.SetFaith(CurrentFaith);
-
+        animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+        animator.SetBool("IsArguing", true);
     }
 
     public void Restore(float faith)
