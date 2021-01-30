@@ -1361,7 +1361,7 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
-  P_health: 10
+  P_health: 20
   health: 0
   Enemy: {fileID: 2100000, guid: 0bb012af472407a4fa8114baef171e57, type: 2}
   destDist: {x: 0, y: 0, z: 0}
@@ -1405,7 +1405,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!136 &-5122151673931773617
 CapsuleCollider:
   m_ObjectHideFlags: 0
