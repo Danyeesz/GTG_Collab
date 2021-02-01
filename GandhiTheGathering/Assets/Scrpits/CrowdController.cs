@@ -9,21 +9,54 @@ public class CrowdController : MonoBehaviour
     public GameObject Spawn1;
     public GameObject Spawn2;
     public GameObject Spawn3;
+    public int MaxCrowd;
+    public float WaitSecs;
+    public float GameTime;
 
 
     void Start()
     {
-        Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
-        Instantiate(CrowdOfFive, Spawn2.transform.position, Quaternion.identity);
-        Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
-        Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
-        Instantiate(CrowdOfFive, Spawn2.transform.position, Quaternion.identity);
-        Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
+
+        StartCoroutine(CrowdSpawn());
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        GameTime += Time.deltaTime;
+      
+    }
+
+
+
+
+    IEnumerator CrowdSpawn() {
+
+        while (GameTime<60)
+        {
+            Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(10);
+        }
+
+        while (GameTime >= 60f && GameTime <= 120f)
+        {
+            Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfFive, Spawn3.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(10);
+        }
+
+        while (GameTime >= 60f && GameTime <= 120f)
+        {
+            Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
+            Instantiate(CrowdOfFive, Spawn3.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(10);
+        }
+
+       
         
     }
 }

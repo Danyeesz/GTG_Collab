@@ -34,8 +34,8 @@ public class S_CameraMovement : MonoBehaviour
 
         Ray ray = new Ray(transform.position, target.transform.position - transform.position);
         RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, Objects))
+        Physics.Raycast(ray, out hit, Objects);
+        if (hit.transform.name != "Gandhi")
         {
             Transform hitobj = hit.transform;
             Debug.Log(hit.transform.name);

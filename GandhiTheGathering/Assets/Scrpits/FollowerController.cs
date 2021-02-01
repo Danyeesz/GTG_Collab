@@ -14,7 +14,9 @@ public class FollowerController : MonoBehaviour
     public Transform player;
     public Transform enemy;
 
-    public Material follower;
+    public Material [] followermats;
+  
+
     public float sightRange;
     public LayerMask isEnemy;
     public bool inSight;
@@ -25,8 +27,7 @@ public class FollowerController : MonoBehaviour
 
     public Animator animator;
 
-
-
+ 
     private void OnEnable()
     {
         transform.GetChild(0).gameObject.SetActive(true);
@@ -40,8 +41,9 @@ public class FollowerController : MonoBehaviour
         faithBar.SetMaxFaith(MaxFaith);
 
         InspBar = GameObject.FindGameObjectWithTag("Insp_Slider").GetComponent<Slider>();
+        
+        transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = followermats[Random.Range(0, 3)];
 
-        gameObject.GetComponent<MeshRenderer>().material = follower;
 
         animator = GetComponentInChildren<Animator>();
 

@@ -12766,6 +12766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 325724833, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 325724838, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: camP
       value: 

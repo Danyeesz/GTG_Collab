@@ -22,13 +22,13 @@ public class EnemyController : MonoBehaviour
     public Material Enemy;
     public Vector3 destDist;
     public Animator animator;
+
     
-
-
 
     private void OnEnable()
     {
-        gameObject.GetComponent<MeshRenderer>().material = Enemy;
+     
+        transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
         health = P_health;
         transform.GetChild(0).gameObject.SetActive(false);
         agentE = GetComponent<NavMeshAgent>();
@@ -127,6 +127,15 @@ public class EnemyController : MonoBehaviour
             inSight = true;
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             animator.SetBool("IsArguing", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player")
+        {
+            
+            animator.SetBool("IsArguing", false);
         }
     }
 
