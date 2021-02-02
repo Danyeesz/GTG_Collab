@@ -123,11 +123,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            while (collision.tag == "Player")
-            {
-                health = health - 1;
-            }
-            
+          
+            health = health - 1;
             inSight = true;
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             animator.SetBool("IsArguing", true);
