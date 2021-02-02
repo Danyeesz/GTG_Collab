@@ -134,11 +134,11 @@ public class FollowerController : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Enemy")
         {
-            MinusFaith(1);
+            MinusFaith(0.1f);
         }
     }
 }

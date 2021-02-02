@@ -119,12 +119,12 @@ public class EnemyController : MonoBehaviour
     }
 
    
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Player")
         {
           
-            health = health - 1;
+            health = health - 0.1f;
             inSight = true;
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             animator.SetBool("IsArguing", true);
