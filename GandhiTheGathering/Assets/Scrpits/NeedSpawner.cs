@@ -107,7 +107,7 @@ public class NeedSpawner : MonoBehaviour
     {
         SetNeeds(0.1f);
         transform.GetChild(randm).gameObject.SetActive(false);
-        t_image.gameObject.SetActive(true);
+        t_image.gameObject.SetActive(false);
     }
 
     
