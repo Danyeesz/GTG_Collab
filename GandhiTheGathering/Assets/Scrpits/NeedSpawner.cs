@@ -11,8 +11,9 @@ public class NeedSpawner : MonoBehaviour
     private float spawnTime;
     public float needtime;
     public float timer;
-
     int randm;
+
+    public Image t_image;
 
     GameObject FollowerHolder;
 
@@ -28,6 +29,8 @@ public class NeedSpawner : MonoBehaviour
         canvas.renderMode = RenderMode.WorldSpace;
         canvas.worldCamera = GameObject.FindWithTag("Camera").GetComponent<Camera>();
         timer = needtime;
+        
+
 
         FollowerHolder = GameObject.Find("Followers");
 
@@ -78,16 +81,20 @@ public class NeedSpawner : MonoBehaviour
 
         }
 
+
+
     }
 
     void SpawnButton()
     {
         time = 0;
-        randm = Random.Range(1, 7);
+        randm = Random.Range(2, 8);
         transform.GetChild(randm).gameObject.SetActive(true);
+        t_image.gameObject.SetActive(true);
         if ((timer - Time.deltaTime )<= 0)
         {
             transform.GetChild(randm).gameObject.SetActive(false);
+            
         }
     }
     
@@ -100,6 +107,7 @@ public class NeedSpawner : MonoBehaviour
     {
         SetNeeds(0.1f);
         transform.GetChild(randm).gameObject.SetActive(false);
+        t_image.gameObject.SetActive(true);
     }
 
     
