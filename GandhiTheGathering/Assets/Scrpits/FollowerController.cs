@@ -8,7 +8,6 @@ public class FollowerController : MonoBehaviour
 {
     public float MaxFaith;
     public float CurrentFaith;
-    public static int f_number;
 
     public NavMeshAgent agentF;
     public Transform player;
@@ -32,7 +31,6 @@ public class FollowerController : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(true);
         this.transform.parent = GameObject.Find("Followers").transform;
-        f_number++;
         gameObject.tag = "Player";
         gameObject.layer = 9;
         agentF = GetComponent<NavMeshAgent>();
@@ -134,11 +132,11 @@ public class FollowerController : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Enemy")
         {
-            MinusFaith(1);
+            MinusFaith(0.1f);
         }
     }
 }
