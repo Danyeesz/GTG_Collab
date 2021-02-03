@@ -38,10 +38,10 @@ public class S_CameraMovement : MonoBehaviour
         if (hit.transform.name != "Gandhi")
         {
             Transform hitobj = hit.transform;
-            Debug.Log(hit.transform.name);
+          
             Renderer obj = hit.transform.GetComponent<Renderer>();
             Material mats = obj.material;
-            Debug.Log(obj.material.name);
+          
             obj.material = transp;
             if (hitobj.name != hit.transform.name)
             {

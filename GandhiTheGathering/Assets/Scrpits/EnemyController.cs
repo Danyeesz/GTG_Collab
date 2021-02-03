@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
         colliders = Physics.OverlapSphere(transform.position, sightRange, isPlayer);
         for (int i = 0; i < colliders.Length; i++)
         {
-            Debug.Log(colliders[i].name);
+           
             if (colliders[i].tag == "Player")
             {
                 Vector3 dir = (colliders[i].transform.position - transform.position).normalized;

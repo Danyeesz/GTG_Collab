@@ -37,7 +37,7 @@ public class CrowdController : MonoBehaviour
             Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
             Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
             Instantiate(CrowdOfThree, Spawn3.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(60);
         }
 
         while (GameTime >= 60f && GameTime <= 120f)
@@ -45,7 +45,7 @@ public class CrowdController : MonoBehaviour
             Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
             Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
             Instantiate(CrowdOfFive, Spawn3.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(60);
         }
 
         while (GameTime >= 60f && GameTime <= 120f)
@@ -53,7 +53,7 @@ public class CrowdController : MonoBehaviour
             Instantiate(CrowdOfThree, Spawn1.transform.position, Quaternion.identity);
             Instantiate(CrowdOfThree, Spawn2.transform.position, Quaternion.identity);
             Instantiate(CrowdOfFive, Spawn3.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(60);
         }
 
        

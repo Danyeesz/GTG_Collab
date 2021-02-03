@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class InspirationManager : MonoBehaviour
 {
-    public Insp_Slider InspBar;
+    static public Insp_Slider InspBar;
     int fnumber;
-    static public float insp;
-
+    public float insp;
+    static public int CrowdSize;
     
     void Start()
     {
@@ -18,13 +18,18 @@ public class InspirationManager : MonoBehaviour
   
     void Update()
     {
-        
-        if (fnumber < FollowerController.f_number)
+     
+        if (CrowdSize == 3)
         {
-            insp += 0.1f;
-            InspBar.SetInsp(insp);
+           
+                insp += 0.3f;
+                InspBar.SetInsp(insp);
+                fnumber = GameObject.Find("Followers").transform.childCount;
+            
+            
         }
-        fnumber = FollowerController.f_number;
+        
+        
     }
 
    
