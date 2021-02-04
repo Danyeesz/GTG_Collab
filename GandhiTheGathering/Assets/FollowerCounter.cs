@@ -19,6 +19,6 @@ public class FollowerCounter : MonoBehaviour
     void Update()
     {
         FollowerCount = transform.childCount;
-        Followers.text = "Followers:" + (FollowerCount);
+        Followers.text = "Followers:" + FollowerCount;
     }
 }
