@@ -16,7 +16,7 @@ public class FollowerController : MonoBehaviour
     public Animator animator;
     public Material [] followermats;
 
-    public LayerMask isEnemy, isFollower;
+    public LayerMask isEnemy;
     Vector3 ins_pos;
 
     public float sightRange;
@@ -31,10 +31,9 @@ public class FollowerController : MonoBehaviour
     {
 
         transform.GetChild(0).gameObject.SetActive(true);
-
-        gameObject.tag = "Follower";
-        gameObject.layer = isFollower;
-
+        this.transform.parent = GameObject.Find("Followers").transform;
+        gameObject.tag = "Player";
+        gameObject.layer = 9;
         agentF = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         CurrentFaith = MaxFaith;
@@ -93,6 +92,9 @@ public class FollowerController : MonoBehaviour
     void Update()
     {
         
+
+       
+       
         if (!inSight)
         {
             Follow();
@@ -140,7 +142,8 @@ public class FollowerController : MonoBehaviour
 
         CurrentFaith -= mfaith;
         faithBar.SetFaith(CurrentFaith);
-       
+        animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+        animator.SetBool("IsArguing", true);
     }
 
     public void Restore(float faith)
@@ -157,8 +160,6 @@ public class FollowerController : MonoBehaviour
         if (other.tag == "Enemy")
         {
             col_atm++;
-            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
-            animator.SetBool("IsArguing", true);
         }
 
     }
@@ -168,7 +169,6 @@ public class FollowerController : MonoBehaviour
         if (other.tag == "Enemy")
         {
             col_atm--;
-            animator.SetBool("IsArguing", false);
         }
 
     }
@@ -178,8 +178,7 @@ public class FollowerController : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            collision.GetComponent<EnemyController>().health -= 1 / col_atm;
-            Debug.Log(transform.name +" is Damaging" + collision.transform.name);
+            collision.GetComponent<EnemyController>().health -= 1 / col_atm; 
             inSight = true;
         }
         else

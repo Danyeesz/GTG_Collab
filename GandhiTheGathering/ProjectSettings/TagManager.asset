@@ -10,7 +10,6 @@ TagManager:
   - FvsE
   - Camera
   - Insp_Slider
-  - Follower
   layers:
   - Default
   - TransparentFX

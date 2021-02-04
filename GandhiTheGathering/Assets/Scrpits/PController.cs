@@ -44,7 +44,7 @@ public class PController : MonoBehaviour
             {
 
                 InspirationManager.CrowdSize = 3;
-                if (other.transform.parent.childCount <= 2)
+                if (other.transform.parent.childCount == 1)
                 {
                     insp += 0.3f;
                     InspirationManager.InspBar.SetInsp(insp);

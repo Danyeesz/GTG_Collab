@@ -345,7 +345,6 @@ MonoBehaviour:
   needtime: 3
   timer: 0
   t_image: {fileID: 2825703268339324950}
-  FollowerHolder: {fileID: 0}
   FoodVsEqu: {fileID: 0}
   HinduVsReli: {fileID: 0}
   BritainVsIndia: {fileID: 0}
@@ -1445,9 +1444,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentE: {fileID: 1947217396463993980}
   player: {fileID: 1834113387730670553, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
-  dest: {fileID: 0}
-  Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
-  animator: {fileID: 0}
   isGround:
     serializedVersion: 2
     m_Bits: 256
@@ -1457,18 +1453,17 @@ MonoBehaviour:
   isFollower:
     serializedVersion: 2
     m_Bits: 2048
-  isEnemy:
-    serializedVersion: 2
-    m_Bits: 1024
-  destDist: {x: 0, y: 0, z: 0}
-  destV: {x: 0, y: 0, z: 0}
   inSight: 0
-  P_health: 300
-  health: 0
+  dest: {fileID: 0}
+  destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
+  P_health: 300
+  health: 0
   col_atm: 0
-  parent: {fileID: 0}
+  Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
+  destDist: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!114 &8272801316338589620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,27 +1476,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4826225dfbbf9c84d9df324783707a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxFaith: 300
+  CurrentFaith: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
   enemy: {fileID: 0}
-  faithBar: {fileID: 8206504091746276369}
-  InspBar: {fileID: 0}
-  animator: {fileID: 0}
   followermats:
   - {fileID: 2100000, guid: aaa573335a0a8dc4b8e75430f771231f, type: 2}
   - {fileID: 2100000, guid: cc233b7ed6d436b4bab0e90374b9f8cc, type: 2}
   - {fileID: 2100000, guid: b3a9fefa73c172b4d85129d259cf0651, type: 2}
   - {fileID: 2100000, guid: e321cd8486a6b2b46bcd4ba6d92e1e66, type: 2}
+  sightRange: 10
   isEnemy:
     serializedVersion: 2
     m_Bits: 1024
-  isFollower:
-    serializedVersion: 2
-    m_Bits: 2048
-  sightRange: 10
   inSight: 0
-  MaxFaith: 300
-  CurrentFaith: 0
+  faithBar: {fileID: 8206504091746276369}
+  InspBar: {fileID: 0}
+  animator: {fileID: 0}
   col_atm: 0
 --- !u!54 &-2598083320149567580
 Rigidbody:

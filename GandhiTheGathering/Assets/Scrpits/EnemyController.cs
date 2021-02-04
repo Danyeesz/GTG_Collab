@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public Material Enemy;
     public Animator animator;
 
-    public LayerMask isGround, isPlayer, isFollower, isEnemy;
+    public LayerMask isGround, isPlayer, isFollower;
     public Vector3 destDist;
     public Vector3 destV;
 
@@ -25,22 +25,11 @@ public class EnemyController : MonoBehaviour
     public float health;
     public float destRange, sightRange;
     public int col_atm;
-
-    public Transform parent;
-
-
-    private void Awake()
-    {
-        parent = this.transform.parent;
-    }
-   
-        
     
 
     private void OnEnable()
     {
-        
-        this.transform.parent = parent;
+     
         transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
         health = P_health;
         transform.GetChild(0).gameObject.SetActive(false);
@@ -50,7 +39,7 @@ public class EnemyController : MonoBehaviour
 
 
         gameObject.tag = "Enemy";
-        gameObject.layer = isEnemy;
+        gameObject.layer = 10;
 
         float randomZ = UnityEngine.Random.Range(-destRange, destRange);
         float randomX = UnityEngine.Random.Range(-destRange, destRange);
@@ -64,7 +53,6 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         gameObject.GetComponent<FollowerController>().enabled = true;
-        
     }
 
 
@@ -103,11 +91,15 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        Debug.Log(gameObject.layer);
+
     }
 
     private void Update()
     {
+
+
+     
+
 
         if (!inSight)
         {
@@ -119,11 +111,12 @@ public class EnemyController : MonoBehaviour
            
         
         }
+
         if (health<=0)
         {
 
             gameObject.GetComponent<EnemyController>().enabled = false;
-            this.transform.parent = GameObject.Find("Followers").transform;
+            
         }
 
         
@@ -132,28 +125,28 @@ public class EnemyController : MonoBehaviour
    
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Follower")
+        if (collision.tag == "Player")
         {
           
             inSight = true;
+            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            animator.SetBool("IsArguing", true);
             collision.GetComponent<FollowerController>().MinusFaith(1/col_atm);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Follower")
+        if (other.tag == "Player")
         {
             col_atm++;
-            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
-            animator.SetBool("IsArguing", true);
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Follower")
+        if (other.tag == "Player")
         {
             col_atm--;
             animator.SetBool("IsArguing", false);
