@@ -9,7 +9,6 @@ public class CrowdController : MonoBehaviour
     public GameObject Spawn1;
     public GameObject Spawn2;
     public GameObject Spawn3;
-
     public int MaxCrowd;
     public float WaitSecs;
     public float GameTime;

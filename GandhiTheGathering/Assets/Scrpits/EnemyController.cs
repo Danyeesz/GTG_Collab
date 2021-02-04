@@ -10,21 +10,19 @@ public class EnemyController : MonoBehaviour
     
     public NavMeshAgent agentE;
     public Transform player;
-    public Transform dest;
-    public Material Enemy;
-    public Animator animator;
-
     public LayerMask isGround, isPlayer, isFollower;
-    public Vector3 destDist;
-    public Vector3 destV;
-
-    bool destSet;
     public bool inSight;
 
+    public Transform dest;
+    public Vector3 destV;
+    public float destRange, sightRange;
+    bool destSet;
     public float P_health;
     public float health;
-    public float destRange, sightRange;
-    public int col_atm;
+    public Material Enemy;
+    public Vector3 destDist;
+    public Animator animator;
+
     
 
     private void OnEnable()
@@ -36,10 +34,7 @@ public class EnemyController : MonoBehaviour
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         destSet = false;
-
-
-        gameObject.tag = "Enemy";
-        gameObject.layer = 10;
+        
 
         float randomZ = UnityEngine.Random.Range(-destRange, destRange);
         float randomX = UnityEngine.Random.Range(-destRange, destRange);
@@ -83,7 +78,7 @@ public class EnemyController : MonoBehaviour
                     if (hit.transform.tag == "Player")
                     {
                         inSight = true;
-                        destV = hit.transform.position;
+                        
                     }
 
                 }
@@ -114,7 +109,8 @@ public class EnemyController : MonoBehaviour
 
         if (health<=0)
         {
-
+            
+           
             gameObject.GetComponent<EnemyController>().enabled = false;
             
         }
@@ -128,30 +124,21 @@ public class EnemyController : MonoBehaviour
         if (collision.tag == "Player")
         {
           
+            health = health - 0.1f;
             inSight = true;
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             animator.SetBool("IsArguing", true);
-            collision.GetComponent<FollowerController>().MinusFaith(1/col_atm);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider collision)
     {
-        if (other.tag == "Player")
+        
+        if (collision.tag == "Player")
         {
-            col_atm++;
-        }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            col_atm--;
+            
             animator.SetBool("IsArguing", false);
         }
-
     }
 
     private void Patrol()
@@ -177,7 +164,7 @@ public class EnemyController : MonoBehaviour
 
     private void Chase() {
 
-       
+        destV = player.position;
         dest.position = destV;
         agentE.SetDestination(dest.position) ;
         destSet = true;
