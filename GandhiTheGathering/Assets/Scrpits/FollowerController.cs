@@ -6,29 +6,30 @@ using UnityEngine.AI;
 
 public class FollowerController : MonoBehaviour
 {
-    public float MaxFaith;
-    public float CurrentFaith;
+  
 
     public NavMeshAgent agentF;
     public Transform player;
     public Transform enemy;
-
-    public Material [] followermats;
-  
-
-    public float sightRange;
-    public LayerMask isEnemy;
-    public bool inSight;
-    
-
     public FaithBar faithBar;
     public Slider InspBar;
-
     public Animator animator;
+    public Material [] followermats;
 
+    public LayerMask isEnemy;
+    Vector3 ins_pos;
+
+    public float sightRange;
+    public bool inSight;
+    public float MaxFaith;
+    public float CurrentFaith;
+    public int col_atm;
+
+ 
  
     private void OnEnable()
     {
+
         transform.GetChild(0).gameObject.SetActive(true);
         this.transform.parent = GameObject.Find("Followers").transform;
         gameObject.tag = "Player";
@@ -52,25 +53,47 @@ public class FollowerController : MonoBehaviour
         gameObject.GetComponent<EnemyController>().enabled = true;
     }
 
+    private void FixedUpdate()
+    {
+
+        Collider[] colliders = new Collider[300];
+        colliders = Physics.OverlapSphere(transform.position, sightRange, isEnemy);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+
+            if (colliders[i].tag == "Enemy")
+            {
+                Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
+                dir.y *= 0;
+
+                Ray ray = new Ray(transform.position, colliders[i].transform.position - transform.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, sightRange, isEnemy))
+                {
+
+                    if (hit.transform.tag == "Enemy")
+                    {
+                        inSight = true;
+                        ins_pos = hit.transform.position;
+                    }
+
+                }
+                Debug.DrawRay(transform.position, colliders[i].transform.position - transform.position);
+            }
+            else
+            {
+                inSight = false;
+            }
+        }
+      
+
+    }
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isEnemy))
-        {
-            inSight = true;
-            enemy.position = hit.transform.position;
-        }
+        
 
-
-
-        else
-        {
-            inSight = false;
-        }
+       
        
         if (!inSight)
         {
@@ -80,7 +103,7 @@ public class FollowerController : MonoBehaviour
         {
             Chase();
             Vector3 Pdistance = player.position - transform.position;
-            if (Pdistance.magnitude >=400)
+            if (Pdistance.magnitude >=40)
             {
                 Follow();
             }
@@ -89,8 +112,10 @@ public class FollowerController : MonoBehaviour
         {
 
             gameObject.GetComponent<FollowerController>().enabled = false;
-           
-           
+         
+
+
+
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -108,11 +133,11 @@ public class FollowerController : MonoBehaviour
     private void Chase()
     {
 
-        agentF.SetDestination(enemy.position);
+        agentF.SetDestination(ins_pos);
        
     }
 
-    private void MinusFaith(float mfaith) 
+    public void MinusFaith(float mfaith) 
     {
 
         CurrentFaith -= mfaith;
@@ -130,13 +155,35 @@ public class FollowerController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            col_atm++;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            col_atm--;
+        }
+
+    }
 
 
     private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Enemy")
         {
-            MinusFaith(0.1f);
+            collision.GetComponent<EnemyController>().health -= 1 / col_atm; 
+            inSight = true;
+        }
+        else
+        {
+            inSight = false;
         }
     }
 }

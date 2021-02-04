@@ -1425,8 +1425,9 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
-  P_health: 35
+  P_health: 300
   health: 0
+  col_atm: 0
   Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
   destDist: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
@@ -1442,7 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4826225dfbbf9c84d9df324783707a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxFaith: 35
+  MaxFaith: 300
   CurrentFaith: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
@@ -1460,6 +1461,7 @@ MonoBehaviour:
   faithBar: {fileID: 8206504091746276369}
   InspBar: {fileID: 0}
   animator: {fileID: 0}
+  col_atm: 0
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0

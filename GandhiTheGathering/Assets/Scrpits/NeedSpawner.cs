@@ -14,9 +14,7 @@ public class NeedSpawner : MonoBehaviour
     int randm;
 
     public Image t_image;
-
-    GameObject FollowerHolder;
-
+    public GameObject FollowerHolder;
     public Slider FoodVsEqu;
     public Slider HinduVsReli;
     public Slider BritainVsIndia;
