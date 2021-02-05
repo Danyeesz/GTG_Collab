@@ -24,7 +24,7 @@ public class FollowerController : MonoBehaviour
     public FaithBar faithBar;
     public Slider InspBar;
 
-    public Animator animator;
+    Animator animator;
 
  
     private void OnEnable()

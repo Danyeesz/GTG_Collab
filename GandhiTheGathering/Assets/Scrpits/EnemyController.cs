@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public float health;
     public Material Enemy;
     public Vector3 destDist;
-    public Animator animator;
+    Animator animator;
 
     
 
