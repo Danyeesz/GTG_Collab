@@ -22,12 +22,16 @@ public class EnemyController : MonoBehaviour
     public Material Enemy;
     public Vector3 destDist;
     public Animator animator;
+    public Transform old_parent;
 
-    
-
+    private void Awake()
+    {
+        old_parent = this.transform.parent;
+    }
     private void OnEnable()
     {
-     
+
+        this.transform.parent = old_parent;
         transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
         health = P_health;
         transform.GetChild(0).gameObject.SetActive(false);
@@ -48,6 +52,7 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         gameObject.GetComponent<FollowerController>().enabled = true;
+     
     }
 
 

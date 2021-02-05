@@ -5,31 +5,41 @@ using UnityEngine.UI;
 
 public class InspirationManager : MonoBehaviour
 {
-    static public Insp_Slider InspBar;
+    public Insp_Slider InspBar;
     int fnumber;
+    int fnumberold;
     public float insp;
-    static public int CrowdSize;
+ 
     
     void Start()
     {
         fnumber = 0;
+        fnumberold = fnumber;
     }
 
   
     void Update()
     {
-     
-        if (CrowdSize == 3)
+
+        fnumber = GameObject.Find("Followers").transform.childCount;
+      
+        if (fnumber == (fnumberold+3))
         {
-           
-                insp += 0.3f;
-                InspBar.SetInsp(insp);
-                fnumber = GameObject.Find("Followers").transform.childCount;
-            
-            
+            InspBar.SetInsp(0.3f);
+            fnumberold = fnumber;
         }
-        
-        
+        if (fnumber == (fnumberold + 5))
+        {
+            InspBar.SetInsp(0.5f);
+            fnumberold = fnumber;
+        }
+        if (fnumber == (fnumberold + 10))
+        {
+            InspBar.SetInsp(1.0f);
+            fnumberold = fnumber;
+        }
+
+
     }
 
    
