@@ -20,15 +20,6 @@ public class PController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.GetComponent<EnemyController>().old_parent.name == "CrowdOfThree(Clone)")
-        {
-            
-            if (other.GetComponent<EnemyController>().old_parent.childCount == 1)
-            {
-               
-            }
-            
-        }
        
     }
 
