@@ -20,17 +20,16 @@ public class PController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.transform.parent.name == "CrowdOfThree")
+        if (other.GetComponent<EnemyController>().old_parent.name == "CrowdOfThree(Clone)")
         {
-            InspirationManager.CrowdSize = 3;
-            if (other.transform.parent.childCount == 1)
+            
+            if (other.GetComponent<EnemyController>().old_parent.childCount == 1)
             {
-                insp += 0.3f;
-                InspirationManager.InspBar.SetInsp(insp);
+               
             }
             
         }
-        Debug.Log(insp);
+       
     }
 
     // Update is called once per frame

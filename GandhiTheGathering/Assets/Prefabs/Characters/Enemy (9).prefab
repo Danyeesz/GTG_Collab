@@ -1458,7 +1458,7 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
-  P_health: 35
+  P_health: 100
   health: 0
   Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
   destDist: {x: 0, y: 0, z: 0}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4826225dfbbf9c84d9df324783707a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxFaith: 35
+  MaxFaith: 100
   CurrentFaith: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
