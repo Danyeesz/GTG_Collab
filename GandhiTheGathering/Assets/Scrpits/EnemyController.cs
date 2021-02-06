@@ -50,6 +50,8 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         gameObject.GetComponent<FollowerController>().enabled = true;
+        transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+
     }
 
 
@@ -128,6 +130,7 @@ public class EnemyController : MonoBehaviour
           
             health = health - 0.1f;
             inSight = true;
+            
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             animator.SetBool("IsArguing", true);
         }
@@ -138,7 +141,7 @@ public class EnemyController : MonoBehaviour
         
         if (collision.tag == "Player")
         {
-            //transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
             animator.SetBool("IsArguing", false);
         }
     }
@@ -147,8 +150,8 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            
-            //transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             animator.SetBool("IsArguing", true);
         }
         
