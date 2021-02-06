@@ -13,6 +13,12 @@ public class S_CameraMovement : MonoBehaviour
     public LayerMask Objects;
 
     public Material transp;
+    Transform hitObj;
+    Material[] oldMats;
+    Renderer rend;
+
+
+
 
     private void Start()
     {
@@ -37,17 +43,27 @@ public class S_CameraMovement : MonoBehaviour
         Physics.Raycast(ray, out hit, Objects);
         if (hit.transform.name != "Gandhi")
         {
-            Transform hitobj = hit.transform;
-          
-            Renderer obj = hit.transform.GetComponent<Renderer>();
-            Material mats = obj.material;
-          
-            obj.material = transp;
-            if (hitobj.name != hit.transform.name)
+            hitObj = hit.transform;
+
+            rend = hit.transform.GetComponent<Renderer>();
+            oldMats = rend.materials;
+            Material[] newMats = new Material[oldMats.Length];
+            for (int i = 0; i < newMats.Length; i++)
             {
-                hitobj.GetComponent<Renderer>().material = mats;
+                newMats[i] = transp;
             }
+            rend.materials = newMats;
+
         }
+
+        
+
+        if (Vector3.Distance(hitObj.position, target.position) >=3.0f)
+        {
+            //rend.materials = 
+        }
+        
+        
 
     }
 }
