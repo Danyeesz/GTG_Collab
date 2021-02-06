@@ -49,7 +49,7 @@ public class NeedSpawner : MonoBehaviour
 
         if (time >= spawnTime)
         {
-            SpawnButton();
+            StartCoroutine(SpawnButton());
             SetRandomTime();
         }
        
@@ -87,17 +87,16 @@ public class NeedSpawner : MonoBehaviour
 
     }
 
-    void SpawnButton()
+    IEnumerator SpawnButton()
     {
         time = 0;
-        randm = Random.Range(2, 8);
+        randm = Random.Range(2, 9);
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
-        if ((timer - Time.deltaTime )<= 0)
-        {
-            transform.GetChild(randm).gameObject.SetActive(false);
-            
-        }
+        yield return new WaitForSeconds(2);
+        transform.GetChild(randm).gameObject.SetActive(false);
+        t_image.gameObject.SetActive(false);
+
     }
     
     void SetRandomTime()
@@ -115,27 +114,27 @@ public class NeedSpawner : MonoBehaviour
     
     public void SetNeeds(float need)
     {
-        if (randm==1)
+        if (randm==2)
         {
             FoodVsEqu.value -= need;
         }
-        else if (randm == 2)
+        else if (randm == 3)
         {
             FoodVsEqu.value += need;
         }
-        else if (randm == 3)
+        else if (randm == 4)
         {
             BritainVsIndia.value -= need;
         }
-        else if(randm == 4)
+        else if(randm == 5)
         {
             BritainVsIndia.value += need;
         }
-        else if (randm == 5)
+        else if (randm == 6)
         {
             HinduVsReli.value -= need;
         }
-        else if (randm == 6)
+        else if (randm == 7)
         {
             HinduVsReli.value += need;
         }
