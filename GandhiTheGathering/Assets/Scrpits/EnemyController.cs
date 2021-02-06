@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public float health;
     public Material Enemy;
     public Vector3 destDist;
-    Animator animator;
+    public Animator animator;
 
     
 
@@ -44,6 +44,8 @@ public class EnemyController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
     }
+
+   
 
     private void OnDisable()
     {

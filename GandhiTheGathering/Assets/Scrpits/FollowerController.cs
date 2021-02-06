@@ -24,7 +24,7 @@ public class FollowerController : MonoBehaviour
     public FaithBar faithBar;
     public Slider InspBar;
 
-    Animator animator;
+    public Animator animator;
 
  
     private void OnEnable()
@@ -43,8 +43,13 @@ public class FollowerController : MonoBehaviour
         transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = followermats[Random.Range(0, 3)];
 
 
-        animator = GetComponentInChildren<Animator>();
+        
 
+    }
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnDisable()
@@ -92,10 +97,7 @@ public class FollowerController : MonoBehaviour
            
            
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Restore(1f);
-        }
+      
     }
 
     private void Follow() {
@@ -117,8 +119,7 @@ public class FollowerController : MonoBehaviour
 
         CurrentFaith -= mfaith;
         faithBar.SetFaith(CurrentFaith);
-        animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
-        animator.SetBool("IsArguing", true);
+       
     }
 
     public void Restore(float faith)
@@ -137,6 +138,27 @@ public class FollowerController : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             MinusFaith(0.1f);
+            
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            animator.SetBool("IsArguing", true);
+            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Hello");
+            animator.SetBool("IsArguing", false);
         }
     }
 }

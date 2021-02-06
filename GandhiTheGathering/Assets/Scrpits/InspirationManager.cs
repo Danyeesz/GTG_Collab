@@ -13,31 +13,14 @@ public class InspirationManager : MonoBehaviour
     
     void Start()
     {
-        fnumber = 0;
-        fnumberold = fnumber;
+        
     }
 
   
     void Update()
     {
 
-        fnumber = GameObject.Find("Followers").transform.childCount;
-      
-        if (fnumber == (fnumberold+3))
-        {
-            InspBar.SetInsp(0.3f);
-            fnumberold = fnumber;
-        }
-        if (fnumber == (fnumberold + 5))
-        {
-            InspBar.SetInsp(0.5f);
-            fnumberold = fnumber;
-        }
-        if (fnumber == (fnumberold + 10))
-        {
-            InspBar.SetInsp(1.0f);
-            fnumberold = fnumber;
-        }
+       
 
 
     }
