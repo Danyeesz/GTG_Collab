@@ -55,8 +55,5 @@ public class CrowdController : MonoBehaviour
             Instantiate(CrowdOfFive, Spawn3.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(60);
         }
-
-       
-        
     }
 }

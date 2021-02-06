@@ -27,9 +27,9 @@ public class EnemyController : MonoBehaviour
 
     private void OnEnable()
     {
-     
-        transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
         health = P_health;
+        transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
+        
         transform.GetChild(0).gameObject.SetActive(false);
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
@@ -138,9 +138,20 @@ public class EnemyController : MonoBehaviour
         
         if (collision.tag == "Player")
         {
-            
+            //transform.GetChild(0).gameObject.SetActive(false);
             animator.SetBool("IsArguing", false);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            
+            //transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            animator.SetBool("IsArguing", true);
+        }
+        
     }
 
     private void Patrol()

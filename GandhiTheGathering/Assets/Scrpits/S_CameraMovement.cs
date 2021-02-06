@@ -58,12 +58,15 @@ public class S_CameraMovement : MonoBehaviour
 
         }
 
-        
 
-        if (Vector3.Distance(hitObj.position, target.position) >=3.0f)
+        if (hitObj != null)
         {
-            rend.materials = hitObj.GetComponent<OriginalMat>().omats;
+            if (Vector3.Distance(hitObj.position, target.position) >= 1.5f)
+            {
+                rend.materials = hitObj.GetComponent<OriginalMat>().omats;
+            }
         }
+       
         
         
 

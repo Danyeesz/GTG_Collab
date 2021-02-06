@@ -86,11 +86,11 @@ public class NeedSpawner : MonoBehaviour
 
 
     }
-
+    
     IEnumerator SpawnButton()
     {
         time = 0;
-        randm = Random.Range(2, 9);
+        randm = Random.Range(2, 8);
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);

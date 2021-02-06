@@ -6,7 +6,9 @@ public class RestoreFaith : MonoBehaviour
 {
 
     public Insp_Slider InspBar;
-
+    public int quarter;
+    public int half;
+    public int full;
 
 
     public  void Restore()
@@ -17,55 +19,56 @@ public class RestoreFaith : MonoBehaviour
         {
             foreach (FollowerController follower in followerControllers)
             {
-                if ((follower.CurrentFaith + 4) > follower.MaxFaith)
+                if ((follower.CurrentFaith + quarter) > follower.MaxFaith)
                 {
                     follower.Restore((follower.MaxFaith - follower.CurrentFaith));
-                    InspBar.SetInsp(0f);
+                    
                 }
                 else
                 {
                     follower.Restore(4f);
                 }
-                
+
                 
             }
-
+            InspBar.slider.value = 0f;
         }
         else if (InspBar.slider.value >= 0.5f && InspBar.slider.value < 0.75f)
         {
             foreach (FollowerController follower in followerControllers)
             {
-                if ((follower.CurrentFaith + 8) > follower.MaxFaith)
+                if ((follower.CurrentFaith + half) > follower.MaxFaith)
                 {
                     follower.Restore((follower.MaxFaith - follower.CurrentFaith));
-                    InspBar.SetInsp(0f);
+                    
                 }
                 else
                 {
                     follower.Restore(8f);
-                    InspBar.SetInsp(0f);
+                   
 
                 }
+               
             }
-
+            InspBar.slider.value = 0f;
         }
         else if (InspBar.slider.value >= 0.75f && InspBar.slider.value <= 1f)
         {
             foreach (FollowerController follower in followerControllers)
             {
-                if ((follower.CurrentFaith + 12) > follower.MaxFaith)
+                if ((follower.CurrentFaith + full) > follower.MaxFaith)
                 {
                     follower.Restore((follower.MaxFaith - follower.CurrentFaith));
-                    InspBar.SetInsp(0f);
+                    
                 }
                 else
                 {
                     follower.Restore(12f);
-                    InspBar.SetInsp(0f);
+                    
 
                 }
             }
-
+            InspBar.slider.value = 0f;
         }
 
 

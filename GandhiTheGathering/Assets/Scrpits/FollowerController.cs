@@ -11,7 +11,7 @@ public class FollowerController : MonoBehaviour
 
     public NavMeshAgent agentF;
     public Transform player;
-    public Transform enemy;
+    
 
     public Material [] followermats;
   
@@ -30,6 +30,7 @@ public class FollowerController : MonoBehaviour
     private void OnEnable()
     {
         transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         this.transform.parent = GameObject.Find("Followers").transform;
         gameObject.tag = "Player";
         gameObject.layer = 9;
@@ -67,7 +68,7 @@ public class FollowerController : MonoBehaviour
          Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isEnemy))
         {
             inSight = true;
-            enemy.position = hit.transform.position;
+           
         }
 
 
@@ -81,7 +82,7 @@ public class FollowerController : MonoBehaviour
         {
             Follow();
         }
-        else if (inSight)
+       /* else if (inSight)
         {
             Chase();
             Vector3 Pdistance = player.position - transform.position;
@@ -89,7 +90,7 @@ public class FollowerController : MonoBehaviour
             {
                 Follow();
             }
-        }
+        }*/
         if (CurrentFaith<=0)
         {
 
@@ -110,7 +111,7 @@ public class FollowerController : MonoBehaviour
     private void Chase()
     {
 
-        agentF.SetDestination(enemy.position);
+        
        
     }
 
@@ -127,6 +128,7 @@ public class FollowerController : MonoBehaviour
        
         CurrentFaith += faith;
         faithBar.SetFaith(CurrentFaith);
+        
       
 
     }
