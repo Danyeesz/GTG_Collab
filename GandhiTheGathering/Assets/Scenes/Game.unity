@@ -21173,6 +21173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InspBar: {fileID: 2121581746}
+  quarter: 4
+  half: 8
+  full: 12
 --- !u!4 &1263945536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec83286f6570669439250a129a0a1a13, type: 3}
