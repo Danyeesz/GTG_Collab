@@ -17,8 +17,17 @@ public class RestoreFaith : MonoBehaviour
         {
             foreach (FollowerController follower in followerControllers)
             {
-                follower.Restore(4f);
-                InspBar.SetInsp(0f);
+                if ((follower.CurrentFaith + 4) > follower.MaxFaith)
+                {
+                    follower.Restore((follower.MaxFaith - follower.CurrentFaith));
+                    InspBar.SetInsp(0f);
+                }
+                else
+                {
+                    follower.Restore(4f);
+                }
+                
+                
             }
 
         }
@@ -26,8 +35,17 @@ public class RestoreFaith : MonoBehaviour
         {
             foreach (FollowerController follower in followerControllers)
             {
-                follower.Restore(8f);
-                InspBar.SetInsp(0f);
+                if ((follower.CurrentFaith + 8) > follower.MaxFaith)
+                {
+                    follower.Restore((follower.MaxFaith - follower.CurrentFaith));
+                    InspBar.SetInsp(0f);
+                }
+                else
+                {
+                    follower.Restore(8f);
+                    InspBar.SetInsp(0f);
+
+                }
             }
 
         }
@@ -35,8 +53,17 @@ public class RestoreFaith : MonoBehaviour
         {
             foreach (FollowerController follower in followerControllers)
             {
-                follower.Restore(12f);
-                InspBar.SetInsp(0f);
+                if ((follower.CurrentFaith + 12) > follower.MaxFaith)
+                {
+                    follower.Restore((follower.MaxFaith - follower.CurrentFaith));
+                    InspBar.SetInsp(0f);
+                }
+                else
+                {
+                    follower.Restore(12f);
+                    InspBar.SetInsp(0f);
+
+                }
             }
 
         }

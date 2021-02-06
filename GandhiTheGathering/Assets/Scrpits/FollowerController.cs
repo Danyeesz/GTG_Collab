@@ -127,7 +127,7 @@ public class FollowerController : MonoBehaviour
        
         CurrentFaith += faith;
         faithBar.SetFaith(CurrentFaith);
-        InspBar.value = 0f;
+      
 
     }
 

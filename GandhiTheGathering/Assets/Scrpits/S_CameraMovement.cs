@@ -16,6 +16,7 @@ public class S_CameraMovement : MonoBehaviour
     Transform hitObj;
     Material[] oldMats;
     Renderer rend;
+   
 
 
 
@@ -45,6 +46,7 @@ public class S_CameraMovement : MonoBehaviour
         {
             hitObj = hit.transform;
 
+            
             rend = hit.transform.GetComponent<Renderer>();
             oldMats = rend.materials;
             Material[] newMats = new Material[oldMats.Length];
@@ -60,7 +62,7 @@ public class S_CameraMovement : MonoBehaviour
 
         if (Vector3.Distance(hitObj.position, target.position) >=3.0f)
         {
-            //rend.materials = 
+            rend.materials = hitObj.GetComponent<OriginalMat>().omats;
         }
         
         
