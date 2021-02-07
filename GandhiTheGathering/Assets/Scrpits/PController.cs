@@ -10,6 +10,7 @@ public class PController : MonoBehaviour
     public LayerMask Ground;
 
     public float insp;
+    int col_atm;
 
     Animator animator;
     private void Start()

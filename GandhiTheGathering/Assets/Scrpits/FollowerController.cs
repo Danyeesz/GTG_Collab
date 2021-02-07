@@ -155,8 +155,12 @@ public class FollowerController : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            animator.SetBool("IsArguing", true);
-            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            if (transform.GetComponent<FollowerController>().enabled)
+            {
+                animator.SetBool("IsArguing", true);
+                animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            }
+           
             
 
         }
@@ -164,10 +168,14 @@ public class FollowerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (transform.GetComponent<FollowerController>().enabled)
         {
-            Debug.Log("Hello");
-            animator.SetBool("IsArguing", false);
+            if (other.tag == "Enemy")
+            {
+                Debug.Log("Hello");
+                animator.SetBool("IsArguing", false);
+            }
         }
+        
     }
 }
