@@ -21,7 +21,7 @@ public class NeedSpawner : MonoBehaviour
     public Slider FoodVsEqu;
     public Slider HinduVsReli;
     public Slider BritainVsIndia;
-    bool buttonClicked = true;
+    bool buttonClicked;
 
     void Start()
     {
@@ -48,6 +48,8 @@ public class NeedSpawner : MonoBehaviour
     void FixedUpdate()
     {
         time += Time.deltaTime;
+
+        
 
         if (time >= spawnTime)
         {
@@ -95,14 +97,7 @@ public class NeedSpawner : MonoBehaviour
 
         }
 
-        if (buttonClicked == false)
-        {
-            if (transform.parent.GetComponent<FollowerController>().enabled)
-            {
-                transform.parent.GetComponent<FollowerController>().MinusFaith(10);
-                buttonClicked = true;
-            } 
-        }
+        
 
     }
     
@@ -115,12 +110,7 @@ public class NeedSpawner : MonoBehaviour
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
-        if (buttonClicked == true)
-        {
-            buttonClicked = false;
-        }
-        
-        
+        transform.parent.GetComponent<FollowerController>().MinusFaith(10);
         transform.GetChild(randm).gameObject.SetActive(false);
         t_image.gameObject.SetActive(false);
 
@@ -140,7 +130,11 @@ public class NeedSpawner : MonoBehaviour
         {
             transform.parent.GetComponent<EnemyController>().Currenthealth -= 10; 
         }
-        buttonClicked = true;
+        else if (transform.parent.GetComponent<FollowerController>().enabled)
+        {
+            StopAllCoroutines();
+        }
+        
     }
 
     
