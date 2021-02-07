@@ -26,7 +26,7 @@ public class RestoreFaith : MonoBehaviour
                 }
                 else
                 {
-                    follower.Restore(4f);
+                    follower.Restore(quarter);
                 }
 
                 
@@ -44,7 +44,7 @@ public class RestoreFaith : MonoBehaviour
                 }
                 else
                 {
-                    follower.Restore(8f);
+                    follower.Restore(half);
                    
 
                 }
@@ -63,7 +63,7 @@ public class RestoreFaith : MonoBehaviour
                 }
                 else
                 {
-                    follower.Restore(12f);
+                    follower.Restore(full);
                     
 
                 }
