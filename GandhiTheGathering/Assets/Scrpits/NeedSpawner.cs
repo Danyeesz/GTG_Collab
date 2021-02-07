@@ -60,8 +60,8 @@ public class NeedSpawner : MonoBehaviour
             {
                 int randomF = Random.Range(0, FollowerHolder.transform.childCount);
                 Transform follower = FollowerHolder.transform.GetChild(randomF);
-                follower.GetComponent<FollowerController>().enabled = false;
-                follower.GetComponent<EnemyController>().enabled = true;
+                follower.GetComponent<FollowerController>().CurrentFaith = 0;
+               
             }
             BritainVsIndia.value = 0.5f;
 
@@ -74,8 +74,7 @@ public class NeedSpawner : MonoBehaviour
             {
                 int randomF = Random.Range(0, FollowerHolder.transform.childCount);
                 Transform follower = FollowerHolder.transform.GetChild(randomF);
-                follower.GetComponent<FollowerController>().enabled = false;
-                follower.GetComponent<EnemyController>().enabled = true;
+                follower.GetComponent<FollowerController>().CurrentFaith = 0;
             }
             FoodVsEqu.value = 0.5f;
 
@@ -87,9 +86,8 @@ public class NeedSpawner : MonoBehaviour
             {
                 int randomF = Random.Range(0, FollowerHolder.transform.childCount);
                 Transform follower = FollowerHolder.transform.GetChild(randomF);
-                follower.GetComponent<FollowerController>().enabled = false;
-                follower.GetComponent<EnemyController>().enabled = true;
-               
+                follower.GetComponent<FollowerController>().CurrentFaith = 0;
+
             }
 
             HinduVsReli.value = 0.5f;
