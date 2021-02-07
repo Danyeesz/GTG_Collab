@@ -144,24 +144,27 @@ public class FollowerController : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.tag == "Enemy")
+        if (transform.GetComponent<FollowerController>().enabled)
         {
-            MinusFaith(0.1f);
-            
+            if (collision.tag == "Enemy")
+            {
+                MinusFaith(0.1f);
+
+            }
         }
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (transform.GetComponent<FollowerController>().enabled)
         {
-            if (transform.GetComponent<FollowerController>().enabled)
+            if (other.tag == "Enemy")
             {
+
                 animator.SetBool("IsArguing", true);
                 animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             }
-           
-            
 
         }
     }
@@ -172,7 +175,7 @@ public class FollowerController : MonoBehaviour
         {
             if (other.tag == "Enemy")
             {
-                Debug.Log("Hello");
+                
                 animator.SetBool("IsArguing", false);
             }
         }

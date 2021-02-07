@@ -126,34 +126,44 @@ public class EnemyController : MonoBehaviour
    
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (transform.GetComponent<EnemyController>().enabled)
         {
-          
-            Currenthealth = Currenthealth - 0.1f;
-            inSight = true;
-            
-            animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
-            animator.SetBool("IsArguing", true);
+            if (collision.tag == "Player")
+            {
+
+                Currenthealth = Currenthealth - 0.1f;
+                inSight = true;
+            }
         }
+        
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        
-        if (collision.tag == "Player")
+        if (transform.GetComponent<EnemyController>().enabled)
         {
-            //transform.GetChild(0).gameObject.SetActive(false);
-            animator.SetBool("IsArguing", false);
+            if (collision.tag == "Player")
+            {
+                transform.GetChild(0).gameObject.SetActive(false);
+                animator.SetBool("IsArguing", false);
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (transform.GetComponent<EnemyController>().enabled)
         {
-            //transform.GetChild(0).gameObject.SetActive(true);
-            animator.SetBool("IsArguing", true);
+            if (other.tag == "Player")
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+                animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+                animator.SetBool("IsArguing", true);
+            }
         }
+
+       
         
     }
 
