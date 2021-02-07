@@ -27,7 +27,12 @@ public class FollowerController : MonoBehaviour
     public ParticleSystem smoke_e;
     public Animator animator;
     public Vector3 dest;
- 
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     private void OnEnable()
     {
         transform.GetChild(0).gameObject.SetActive(true);
@@ -49,17 +54,6 @@ public class FollowerController : MonoBehaviour
 
     }
 
-    private void Awake()
-    {
-        animator = GetComponentInChildren<Animator>();
-    }
-
-    private void OnDisable()
-    {
-        gameObject.GetComponent<EnemyController>().enabled = true;
-    }
-
-   
     void FixedUpdate()
     {
 
@@ -81,7 +75,7 @@ public class FollowerController : MonoBehaviour
                     if (hit.transform.tag == "Enemy")
                     {
                         inSight = true;
-                        dest = hit.transform.position;
+                        dest = colliders[1].transform.position;
                     }
 
                 }

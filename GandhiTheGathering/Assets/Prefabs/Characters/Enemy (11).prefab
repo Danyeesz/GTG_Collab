@@ -1426,8 +1426,8 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
-  P_health: 100
-  health: 0
+  Maxhealth: 100
+  Currenthealth: 0
   Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
   destDist: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}

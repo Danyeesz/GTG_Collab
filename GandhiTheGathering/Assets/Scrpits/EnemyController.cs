@@ -17,8 +17,8 @@ public class EnemyController : MonoBehaviour
     public Vector3 destV;
     public float destRange, sightRange;
     bool destSet;
-    public float P_health;
-    public float health;
+    public float Maxhealth;
+    public float Currenthealth;
     public Material Enemy;
     public Vector3 destDist;
     public Animator animator;
@@ -27,10 +27,11 @@ public class EnemyController : MonoBehaviour
 
     private void OnEnable()
     {
-        health = P_health;
+
         transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = Enemy;
-        
         transform.GetChild(0).gameObject.SetActive(false);
+
+        Currenthealth = Maxhealth;
         agentE = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         destSet = false;
@@ -111,7 +112,7 @@ public class EnemyController : MonoBehaviour
         
         }
 
-        if (health<=0)
+        if (Currenthealth<=0)
         {
             
            
@@ -128,7 +129,7 @@ public class EnemyController : MonoBehaviour
         if (collision.tag == "Player")
         {
           
-            health = health - 0.1f;
+            Currenthealth = Currenthealth - 0.1f;
             inSight = true;
             
             animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));

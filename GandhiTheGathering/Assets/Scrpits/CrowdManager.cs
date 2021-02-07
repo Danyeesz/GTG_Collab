@@ -55,9 +55,12 @@ public class CrowdManager : MonoBehaviour
 
             }
         }
-       
 
 
+        if (InspInc == true)
+        {
+            Destroy(gameObject);
+        }
         
     }
 }
