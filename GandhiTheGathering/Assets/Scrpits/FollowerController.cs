@@ -26,7 +26,7 @@ public class FollowerController : MonoBehaviour
 
     public ParticleSystem smoke_e;
     public Animator animator;
-
+    public Vector3 dest;
  
     private void OnEnable()
     {
@@ -60,38 +60,49 @@ public class FollowerController : MonoBehaviour
     }
 
    
-    void Update()
+    void FixedUpdate()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, sightRange, isEnemy) ||
-         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isEnemy))
+
+        Collider[] colliders = new Collider[300];
+        colliders = Physics.OverlapSphere(transform.position, sightRange,LayerMask.NameToLayer("Enemy"));
+        for (int i = 0; i < colliders.Length; i++)
         {
-            //inSight = true;
-           
+
+            if (colliders[i].tag == "Player")
+            {
+                Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
+                dir.y *= 0;
+
+                Ray ray = new Ray(transform.position, colliders[i].transform.position - transform.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, sightRange, LayerMask.NameToLayer("Enemy")))
+                {
+
+                    if (hit.transform.tag == "Enemy")
+                    {
+                        inSight = true;
+                        dest = hit.transform.position;
+                    }
+
+                }
+                Debug.DrawRay(transform.position, colliders[i].transform.position - transform.position);
+            }
         }
 
-
-
-        else
-        {
-            inSight = false;
-        }
-       
+        Vector3 Pdistance = player.position - transform.position;
         if (!inSight)
         {
             Follow();
         }
-       /* else if (inSight)
+        else if (inSight && Pdistance.magnitude <=50)
         {
             Chase();
-            Vector3 Pdistance = player.position - transform.position;
-            if (Pdistance.magnitude >=400)
-            {
-                Follow();
-            }
-        }*/
+        }
+        else if (inSight && Pdistance.magnitude > 50)
+        {
+            Follow();
+        }
+
         if (CurrentFaith<=0)
         {
             
@@ -113,7 +124,7 @@ public class FollowerController : MonoBehaviour
     private void Chase()
     {
 
-        
+        agentF.SetDestination(dest);
        
     }
 

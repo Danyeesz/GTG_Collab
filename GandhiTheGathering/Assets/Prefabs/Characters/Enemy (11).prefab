@@ -164,7 +164,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -7.45459, y: -6.6788025}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -344,6 +344,7 @@ MonoBehaviour:
   minTime: 5
   needtime: 3
   timer: 0
+  f_leave: 3
   t_image: {fileID: 2806615369754684398}
   FoodVsEqu: {fileID: 0}
   HinduVsReli: {fileID: 0}
@@ -1071,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2116491019648567940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1446,20 +1447,21 @@ MonoBehaviour:
   CurrentFaith: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
-  enemy: {fileID: 0}
   followermats:
   - {fileID: 2100000, guid: aaa573335a0a8dc4b8e75430f771231f, type: 2}
   - {fileID: 2100000, guid: cc233b7ed6d436b4bab0e90374b9f8cc, type: 2}
   - {fileID: 2100000, guid: b3a9fefa73c172b4d85129d259cf0651, type: 2}
   - {fileID: 2100000, guid: e321cd8486a6b2b46bcd4ba6d92e1e66, type: 2}
-  sightRange: 10
+  sightRange: 5
   isEnemy:
     serializedVersion: 2
     m_Bits: 1024
   inSight: 0
   faithBar: {fileID: 8206504091746276369}
   InspBar: {fileID: 0}
+  smoke_e: {fileID: 0}
   animator: {fileID: 0}
+  dest: {x: 0, y: 0, z: 0}
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0

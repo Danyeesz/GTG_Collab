@@ -12,6 +12,7 @@ public class NeedSpawner : MonoBehaviour
     public float needtime;
     public float timer;
     int randm;
+    public int f_leave;
 
     public Image t_image;
 
@@ -55,31 +56,44 @@ public class NeedSpawner : MonoBehaviour
        
         if (BritainVsIndia.value == BritainVsIndia.maxValue || BritainVsIndia.value == BritainVsIndia.minValue)
         {
-            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
-            Transform follower = FollowerHolder.transform.GetChild(randomF);
-            follower.GetComponent<FollowerController>().enabled = false;
-            follower.GetComponent<EnemyController>().enabled = true;
+            for (int i = 0; i < f_leave; i++)
+            {
+                int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+                Transform follower = FollowerHolder.transform.GetChild(randomF);
+                follower.GetComponent<FollowerController>().enabled = false;
+                follower.GetComponent<EnemyController>().enabled = true;
+            }
             BritainVsIndia.value = 0.5f;
 
         }
         
         if (FoodVsEqu.value == FoodVsEqu.maxValue || FoodVsEqu.value == FoodVsEqu.minValue)
         {
-            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
-            Transform follower = FollowerHolder.transform.GetChild(randomF);
-            follower.GetComponent<FollowerController>().enabled = false;
-            follower.GetComponent<EnemyController>().enabled = true;
+
+            for (int i = 0; i < f_leave; i++)
+            {
+                int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+                Transform follower = FollowerHolder.transform.GetChild(randomF);
+                follower.GetComponent<FollowerController>().enabled = false;
+                follower.GetComponent<EnemyController>().enabled = true;
+            }
             FoodVsEqu.value = 0.5f;
 
         }
         
         if (HinduVsReli.value == HinduVsReli.maxValue || HinduVsReli.value == HinduVsReli.minValue)
         {
-            int randomF = Random.Range(0, FollowerHolder.transform.childCount);
-            Transform follower = FollowerHolder.transform.GetChild(randomF);
-            follower.GetComponent<FollowerController>().enabled = false;
-            follower.GetComponent<EnemyController>().enabled = true;
+            for (int i = 0; i < f_leave; i++)
+            {
+                int randomF = Random.Range(0, FollowerHolder.transform.childCount);
+                Transform follower = FollowerHolder.transform.GetChild(randomF);
+                follower.GetComponent<FollowerController>().enabled = false;
+                follower.GetComponent<EnemyController>().enabled = true;
+               
+            }
+
             HinduVsReli.value = 0.5f;
+
 
         }
 
@@ -91,6 +105,8 @@ public class NeedSpawner : MonoBehaviour
     {
         time = 0;
         randm = Random.Range(2, 8);
+      
+        Debug.Log(transform.parent.name +" " +randm);
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
@@ -116,27 +132,27 @@ public class NeedSpawner : MonoBehaviour
     {
         if (randm==2)
         {
-            FoodVsEqu.value -= need;
+            FoodVsEqu.value += need;
         }
         else if (randm == 3)
         {
-            FoodVsEqu.value += need;
+            FoodVsEqu.value -= need;
         }
         else if (randm == 4)
         {
-            BritainVsIndia.value -= need;
+            BritainVsIndia.value += need;
         }
         else if(randm == 5)
         {
-            BritainVsIndia.value += need;
+            BritainVsIndia.value -= need;
         }
         else if (randm == 6)
         {
-            HinduVsReli.value -= need;
+            HinduVsReli.value += need;
         }
         else if (randm == 7)
         {
-            HinduVsReli.value += need;
+            HinduVsReli.value -= need;
         }
         
        
