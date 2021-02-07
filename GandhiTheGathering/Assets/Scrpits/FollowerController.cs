@@ -24,6 +24,7 @@ public class FollowerController : MonoBehaviour
     public FaithBar faithBar;
     public Slider InspBar;
 
+    public ParticleSystem smoke_e;
     public Animator animator;
 
  
@@ -58,7 +59,7 @@ public class FollowerController : MonoBehaviour
         gameObject.GetComponent<EnemyController>().enabled = true;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         RaycastHit hit;
@@ -67,7 +68,7 @@ public class FollowerController : MonoBehaviour
          Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, sightRange, isEnemy) ||
          Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, sightRange, isEnemy))
         {
-            inSight = true;
+            //inSight = true;
            
         }
 
@@ -93,10 +94,11 @@ public class FollowerController : MonoBehaviour
         }*/
         if (CurrentFaith<=0)
         {
+            
+            
+            Destroy(gameObject);
+            //Instantiate(smoke_e, transform.position, Quaternion.identity);
 
-            gameObject.GetComponent<FollowerController>().enabled = false;
-           
-           
         }
       
     }
