@@ -122,7 +122,7 @@ public class FollowerController : MonoBehaviour
        
     }
 
-    private void MinusFaith(float mfaith) 
+    public void MinusFaith(float mfaith) 
     {
 
         CurrentFaith -= mfaith;

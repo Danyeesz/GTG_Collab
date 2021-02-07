@@ -21,6 +21,7 @@ public class NeedSpawner : MonoBehaviour
     public Slider FoodVsEqu;
     public Slider HinduVsReli;
     public Slider BritainVsIndia;
+    bool buttonClicked = true;
 
     void Start()
     {
@@ -92,10 +93,16 @@ public class NeedSpawner : MonoBehaviour
 
             HinduVsReli.value = 0.5f;
 
-
         }
 
-
+        if (buttonClicked == false)
+        {
+            if (transform.parent.GetComponent<FollowerController>().enabled)
+            {
+                transform.parent.GetComponent<FollowerController>().MinusFaith(10);
+                buttonClicked = true;
+            } 
+        }
 
     }
     
@@ -108,6 +115,12 @@ public class NeedSpawner : MonoBehaviour
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
+        if (buttonClicked == true)
+        {
+            buttonClicked = false;
+        }
+        
+        
         transform.GetChild(randm).gameObject.SetActive(false);
         t_image.gameObject.SetActive(false);
 
@@ -123,6 +136,11 @@ public class NeedSpawner : MonoBehaviour
         SetNeeds(0.1f);
         transform.GetChild(randm).gameObject.SetActive(false);
         t_image.gameObject.SetActive(false);
+        if (transform.parent.GetComponent<EnemyController>().enabled)
+        {
+            transform.parent.GetComponent<EnemyController>().Currenthealth -= 10; 
+        }
+        buttonClicked = true;
     }
 
     
