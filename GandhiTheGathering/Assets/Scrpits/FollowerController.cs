@@ -29,6 +29,7 @@ public class FollowerController : MonoBehaviour
     public Animator animator;
     public Vector3 dest;
     public float FaithDecreaseRate;
+    public float speed;
 
     private void Awake()
     {
@@ -113,6 +114,7 @@ public class FollowerController : MonoBehaviour
     private void Follow() {
 
         agentF.stoppingDistance = 1.5f;
+        agentF.speed = speed;
         agentF.SetDestination(player.position);
 
     }
