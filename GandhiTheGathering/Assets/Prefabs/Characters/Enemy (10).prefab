@@ -1478,6 +1478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxFaith: 100
   CurrentFaith: 0
+  col_atm: 0
   agentF: {fileID: 0}
   player: {fileID: 0}
   followermats:
@@ -1492,9 +1493,10 @@ MonoBehaviour:
   inSight: 0
   faithBar: {fileID: 8206504091746276369}
   InspBar: {fileID: 0}
-  smoke_e: {fileID: 0}
+  smoke_e: {fileID: 2366456956615113030, guid: 7ca539e684295e64684d588fa5801e18, type: 3}
   animator: {fileID: 0}
   dest: {x: 0, y: 0, z: 0}
+  FaithDecreaseRate: 0.02
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0

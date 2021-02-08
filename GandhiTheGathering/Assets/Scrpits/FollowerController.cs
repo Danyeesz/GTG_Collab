@@ -28,6 +28,7 @@ public class FollowerController : MonoBehaviour
     public ParticleSystem smoke_e;
     public Animator animator;
     public Vector3 dest;
+    public float FaithDecreaseRate;
 
     private void Awake()
     {
@@ -50,8 +51,8 @@ public class FollowerController : MonoBehaviour
         
         transform.GetChild(1).Find("Box003").GetComponent<SkinnedMeshRenderer>().material = followermats[Random.Range(0, 3)];
 
+        animator.SetBool("IsArguing", false);
 
-        
 
     }
 
@@ -149,7 +150,7 @@ public class FollowerController : MonoBehaviour
         {
             if (collision.tag == "Enemy")
             {
-                MinusFaith(0.1f);
+                MinusFaith(FaithDecreaseRate);
 
             }
         }
