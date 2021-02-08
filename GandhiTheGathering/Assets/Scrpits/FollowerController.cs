@@ -113,7 +113,7 @@ public class FollowerController : MonoBehaviour
 
     private void Follow() {
 
-        agentF.stoppingDistance = 1.5f;
+        agentF.stoppingDistance = 2f;
         agentF.speed = speed;
         agentF.SetDestination(player.position);
 
