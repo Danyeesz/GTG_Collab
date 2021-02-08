@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4be5b9abae835740b4212d9bf434361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 20
+  maxTime: 40
   minTime: 5
   needtime: 3
   timer: 0
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   destV: {x: 0, y: 0, z: 0}
   destRange: 20
   sightRange: 5
-  Maxhealth: 100
+  Maxhealth: 70
   Currenthealth: 0
   Enemy: {fileID: 2100000, guid: 395c91c0743ba6f41a877ec50e1419a7, type: 2}
   destDist: {x: 0, y: 0, z: 0}
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   dest: {x: 0, y: 0, z: 0}
   FaithDecreaseRate: 0.02
-  speed: 10
+  speed: 5
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0
