@@ -105,7 +105,7 @@ public class FollowerController : MonoBehaviour
             
             
             Destroy(gameObject);
-            //Instantiate(smoke_e, transform.position, Quaternion.identity);
+            Instantiate(smoke_e, transform.position, Quaternion.identity);
 
         }
       
