@@ -8,6 +8,7 @@ public class FollowerController : MonoBehaviour
 {
     public float MaxFaith;
     public float CurrentFaith;
+    public float col_atm;
 
     public NavMeshAgent agentF;
     public Transform player;

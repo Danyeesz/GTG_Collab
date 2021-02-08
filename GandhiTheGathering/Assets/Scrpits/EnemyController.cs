@@ -131,7 +131,7 @@ public class EnemyController : MonoBehaviour
             if (collision.tag == "Player")
             {
 
-                Currenthealth = Currenthealth - 0.1f;
+               
                 inSight = true;
             }
         }
