@@ -2231,6 +2231,8 @@ MonoBehaviour:
   MaxFaith: 100
   CurrentFaith: 0
   col_atm: 0
+  faith0: {fileID: 2573483893207428721}
+  faith0C: {fileID: 8300000, guid: aafe9b6aa66acaa4cbd1ad10ab3e230d, type: 3}
   agentF: {fileID: 0}
   player: {fileID: 0}
   followermats:
