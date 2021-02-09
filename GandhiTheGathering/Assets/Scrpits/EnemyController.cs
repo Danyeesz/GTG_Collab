@@ -89,13 +89,13 @@ public class EnemyController : MonoBehaviour
             }
         }
         
-        Collider [] InArgueD = Physics.OverlapSphere(transform.position, 2, isFollower);
+        Collider [] InArgueD = Physics.OverlapSphere(transform.position, 3, isFollower);
         for (int i = 0; i < InArgueD.Length; i++)
         {
             if (InArgueD[i].tag == "Follower")
             {
                 InArgueD[i].transform.GetComponent<FollowerController>().MinusFaith(minusfaith / (float)InArgueD.Length);
-                Debug.Log("Dealing" + (1 / (float)InArgueD.Length).ToString() + " damage to" + InArgueD[i].transform.name);
+                
             }
         }
 

@@ -62,12 +62,13 @@ public class FollowerController : MonoBehaviour
     {
 
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2,LayerMask.NameToLayer("Enemy"));
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 3,LayerMask.NameToLayer("Enemy"));
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].tag == "Enemy")
             {
                 colliders[i].transform.GetComponent<EnemyController>().TakeDamage(damage / (float)colliders.Length);
+                Debug.Log("Dealing" + (1 / (float)colliders.Length).ToString() + " damage to" + colliders[i].transform.name);
             }
         }
 
