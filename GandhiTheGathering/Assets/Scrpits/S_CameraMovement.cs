@@ -6,7 +6,7 @@ public class S_CameraMovement : MonoBehaviour
 {
     public Transform target;
 
-    public float smoothspeed = 0.125f;
+    public float smoothspeed;
     public Vector3 offset;
 
     public Camera cam;
