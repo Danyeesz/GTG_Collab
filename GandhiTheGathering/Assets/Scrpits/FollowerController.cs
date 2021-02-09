@@ -9,6 +9,8 @@ public class FollowerController : MonoBehaviour
     public float MaxFaith;
     public float CurrentFaith;
     public float col_atm;
+    public AudioSource faith0;
+    public AudioClip faith0C;
 
     public NavMeshAgent agentF;
     public Transform player;
@@ -88,10 +90,11 @@ public class FollowerController : MonoBehaviour
 
         if (CurrentFaith<=0)
         {
-            
-            
+
+            AudioSource.PlayClipAtPoint(faith0C,transform.position);
             Destroy(gameObject);
             Instantiate(smoke_e, transform.position, Quaternion.identity);
+            Destroy(smoke_e);
             
 
         }

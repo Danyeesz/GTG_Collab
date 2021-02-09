@@ -287,6 +287,8 @@ MonoBehaviour:
   MaxFaith: 100
   CurrentFaith: 0
   col_atm: 0
+  faith0: {fileID: 2054021115239939131}
+  faith0C: {fileID: 8300000, guid: aafe9b6aa66acaa4cbd1ad10ab3e230d, type: 3}
   agentF: {fileID: 0}
   player: {fileID: 0}
   followermats:
@@ -1928,6 +1930,7 @@ MonoBehaviour:
   needtime: 3
   timer: 0
   f_leave: 3
+  Need0: {fileID: 8300000, guid: 69e558779d1f6e94ab37877c1e1c89ab, type: 3}
   t_image: {fileID: 7586678116600550199}
   FoodVsEqu: {fileID: 0}
   HinduVsReli: {fileID: 0}

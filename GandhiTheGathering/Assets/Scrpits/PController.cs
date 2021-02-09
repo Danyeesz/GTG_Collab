@@ -10,10 +10,13 @@ public class PController : MonoBehaviour
     public LayerMask Ground, IsEnemy;
     public float damageG;
 
+    public AudioSource audio;
+    public AudioClip argue;
+
     Animator animator;
     private void Start()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -22,13 +25,10 @@ public class PController : MonoBehaviour
         foreach (Collider col in colliders)
         {
             col.gameObject.GetComponent<EnemyController>().TakeDamage(damageG /(float)colliders.Length);
-            Debug.Log(col.name + " Damaged");
+           
         }
-            
-               
-            
-        
-        Debug.Log(colliders.Length);
+       
+      
     }
 
   
@@ -51,7 +51,14 @@ public class PController : MonoBehaviour
             
         }
     }
-    
-    
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
+    }
+
 }
