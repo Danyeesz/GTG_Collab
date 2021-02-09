@@ -93,7 +93,7 @@ public class EnemyController : MonoBehaviour
                 Debug.DrawRay(transform.position, colliders[i].transform.position - transform.position);
             }
         }
-
+        
 
     }
 
@@ -198,6 +198,13 @@ public class EnemyController : MonoBehaviour
         dest.position = destV;
         agentE.SetDestination(dest.position) ;
         destSet = true;
+        if ((player.position - transform.position).magnitude >= sightRange)
+        {
+
+            inSight = false;
+            destSet = false;
+
+        }
 
     }
 

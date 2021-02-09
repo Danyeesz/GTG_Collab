@@ -124,17 +124,20 @@ public class NeedSpawner : MonoBehaviour
     public void ButtonClicked()
     {
         SetNeeds(0.07f);
+     
         transform.GetChild(randm).gameObject.SetActive(false);
         t_image.gameObject.SetActive(false);
+        
         if (transform.parent.GetComponent<EnemyController>().enabled)
         {
             transform.parent.GetComponent<EnemyController>().Currenthealth -= 50; 
         }
+       
         else if (transform.parent.GetComponent<FollowerController>().enabled)
         {
             StopAllCoroutines();
         }
-        
+       
     }
 
     

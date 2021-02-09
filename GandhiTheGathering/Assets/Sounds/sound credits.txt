@@ -1,0 +1,9 @@
+"pop1.wav", "popdrum.wav": https://www.youtube.com/watch?v=BYPqS0YPxh8 (public domain)
+"sitarstrum.wav": https://freesound.org/people/bosone/sounds/65872/ (CC BY-NC 3.0)
+"tablaloop.wav": https://www.looperman.com/loops/detail/184115/my-tabla-loop-5-80bpm-classical-tabla-loop (copyright free)
+"singingbellhigh.wav" (as well as the low version): https://freesound.org/people/AncientOracle/sounds/476871/ (CC BY 3.0)
+"santoor_low.wav": https://freesound.org/people/matiasromero/sounds/22261/ (CC0 1.0) - copyright free
+"swing.wav": https://opengameart.org/content/rpg-sound-pack (public domain)
+"pain1.wav": https://opengameart.org/content/grunts-male-death-and-pain (CC BY 3.0)
+"painfemale1.wav": https://opengameart.org/content/female-gruntwork-1 (CC BY-SA 4.0)
+"crowdindia.wav": https://freesound.org/people/Martin.Sadoux/sounds/423510/ (CC0 1.0) - copyright free

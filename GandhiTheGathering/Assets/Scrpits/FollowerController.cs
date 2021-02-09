@@ -38,6 +38,7 @@ public class FollowerController : MonoBehaviour
 
     private void OnEnable()
     {
+       
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         this.transform.parent = GameObject.Find("Followers").transform;
@@ -59,13 +60,13 @@ public class FollowerController : MonoBehaviour
 
     void FixedUpdate()
     {
-
+       
         Collider[] colliders = new Collider[300];
         colliders = Physics.OverlapSphere(transform.position, sightRange,LayerMask.NameToLayer("Enemy"));
         for (int i = 0; i < colliders.Length; i++)
         {
 
-            if (colliders[i].tag == "Player")
+            if (colliders[i].tag == "Enemy")
             {
                 Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
                 dir.y *= 0;
@@ -165,9 +166,13 @@ public class FollowerController : MonoBehaviour
         {
             if (other.tag == "Enemy")
             {
-
+                
                 animator.SetBool("IsArguing", true);
                 animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
+            }
+            else if (other.tag == "Player")
+            {
+                animator.SetBool("IsArguing", false);
             }
 
         }
@@ -180,6 +185,10 @@ public class FollowerController : MonoBehaviour
             if (other.tag == "Enemy")
             {
                 
+                animator.SetBool("IsArguing", false);
+            }
+            if (other.tag == "Follower")
+            {
                 animator.SetBool("IsArguing", false);
             }
         }
