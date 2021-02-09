@@ -1079,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8272801316338589620, guid: c3dea55b466e38c499d53f626a182de2, type: 3}
+      propertyPath: damage
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8566706661525966174, guid: c3dea55b466e38c499d53f626a182de2, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -18657,6 +18661,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8272801316338589620, guid: f0838b4f7a7bf3840a14962b73fe3dff, type: 3}
+      propertyPath: damage
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8566706661525966174, guid: f0838b4f7a7bf3840a14962b73fe3dff, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -23929,6 +23937,10 @@ PrefabInstance:
       propertyPath: camP
       value: 
       objectReference: {fileID: 1469342108}
+    - target: {fileID: 325724838, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
+      propertyPath: IsEnemy.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 1834113387730670553, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.17
@@ -35523,6 +35535,10 @@ PrefabInstance:
     - target: {fileID: 8272801316338589620, guid: a3674fe9e07b5374bb23829a9eb38cfe, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272801316338589620, guid: a3674fe9e07b5374bb23829a9eb38cfe, type: 3}
+      propertyPath: damage
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8566706661525966174, guid: a3674fe9e07b5374bb23829a9eb38cfe, type: 3}
       propertyPath: m_Enabled

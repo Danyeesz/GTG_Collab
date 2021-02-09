@@ -11,6 +11,7 @@ TagManager:
   - Camera
   - Insp_Slider
   - Object
+  - Follower
   layers:
   - Default
   - TransparentFX

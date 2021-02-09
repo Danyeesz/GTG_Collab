@@ -28,8 +28,8 @@ public class FollowerController : MonoBehaviour
     public ParticleSystem smoke_e;
     public Animator animator;
     public Vector3 dest;
-    public float FaithDecreaseRate;
     public float speed;
+    public float damage;
 
     private void Awake()
     {
@@ -42,8 +42,8 @@ public class FollowerController : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         this.transform.parent = GameObject.Find("Followers").transform;
-        gameObject.tag = "Player";
-        gameObject.layer = 9;
+        gameObject.tag = "Follower";
+        gameObject.layer = 11;
         agentF = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Gandhi").transform;
         CurrentFaith = MaxFaith;
@@ -60,30 +60,14 @@ public class FollowerController : MonoBehaviour
 
     void FixedUpdate()
     {
-       
-        Collider[] colliders = new Collider[300];
-        colliders = Physics.OverlapSphere(transform.position, sightRange,LayerMask.NameToLayer("Enemy"));
+
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 2,LayerMask.NameToLayer("Enemy"));
         for (int i = 0; i < colliders.Length; i++)
         {
-
             if (colliders[i].tag == "Enemy")
             {
-                Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
-                dir.y *= 0;
-
-                Ray ray = new Ray(transform.position, colliders[i].transform.position - transform.position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, sightRange, LayerMask.NameToLayer("Enemy")))
-                {
-
-                    if (hit.transform.tag == "Enemy")
-                    {
-                        inSight = true;
-                        dest = colliders[1].transform.position;
-                    }
-
-                }
-                Debug.DrawRay(transform.position, colliders[i].transform.position - transform.position);
+                colliders[i].transform.GetComponent<EnemyController>().TakeDamage(damage / (float)colliders.Length);
             }
         }
 
@@ -107,14 +91,15 @@ public class FollowerController : MonoBehaviour
             
             Destroy(gameObject);
             Instantiate(smoke_e, transform.position, Quaternion.identity);
+            
 
         }
-      
+
     }
 
     private void Follow() {
 
-        agentF.stoppingDistance = 2f;
+        agentF.stoppingDistance = 1f;
         agentF.speed = speed;
         agentF.SetDestination(player.position);
 
@@ -145,28 +130,12 @@ public class FollowerController : MonoBehaviour
 
     }
 
-
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (transform.GetComponent<FollowerController>().enabled)
-        {
-            if (collision.tag == "Enemy")
-            {
-                MinusFaith(FaithDecreaseRate);
-
-            }
-        }
-       
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (transform.GetComponent<FollowerController>().enabled)
         {
             if (other.tag == "Enemy")
             {
-                
                 animator.SetBool("IsArguing", true);
                 animator.SetInteger("ArgueNum", UnityEngine.Random.Range(1, 2));
             }
@@ -184,10 +153,9 @@ public class FollowerController : MonoBehaviour
         {
             if (other.tag == "Enemy")
             {
-                
                 animator.SetBool("IsArguing", false);
             }
-            if (other.tag == "Follower")
+            if (other.tag == "Player")
             {
                 animator.SetBool("IsArguing", false);
             }

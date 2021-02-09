@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     public Vector3 destDist;
     public Animator animator;
 
+    public float minusfaith;
     
 
     private void OnEnable()
@@ -68,17 +69,16 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Collider[] colliders = new Collider[300];
-        colliders = Physics.OverlapSphere(transform.position, sightRange, isPlayer);
-        for (int i = 0; i < colliders.Length; i++)
+        
+        Collider[] InViewD = Physics.OverlapSphere(transform.position, sightRange, isPlayer);
+        for (int i = 0; i < InViewD.Length; i++)
         {
-           
-            if (colliders[i].tag == "Player")
+            if (InViewD[i].tag == "Player")
             {
-                Vector3 dir = (colliders[i].transform.position - transform.position).normalized;
+                Vector3 dir = (InViewD[i].transform.position - transform.position).normalized;
                 dir.y *= 0;
 
-                Ray ray = new Ray(transform.position, colliders[i].transform.position - transform.position);
+                Ray ray = new Ray(transform.position, InViewD[i].transform.position - transform.position);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, sightRange,isPlayer))
                 {
@@ -86,23 +86,27 @@ public class EnemyController : MonoBehaviour
                     if (hit.transform.tag == "Player")
                     {
                         inSight = true;
-                        
                     }
 
                 }
-                Debug.DrawRay(transform.position, colliders[i].transform.position - transform.position);
+                Debug.DrawRay(transform.position, InViewD[i].transform.position - transform.position);
             }
         }
         
+        Collider [] InArgueD = Physics.OverlapSphere(transform.position, 2, isFollower);
+        for (int i = 0; i < InArgueD.Length; i++)
+        {
+            if (InArgueD[i].tag == "Follower")
+            {
+                InArgueD[i].transform.GetComponent<FollowerController>().MinusFaith(minusfaith / (float)InArgueD.Length);
+                Debug.Log("Dealing" + (1 / (float)InArgueD.Length).ToString() + " damage to" + InArgueD[i].transform.name);
+            }
+        }
 
     }
 
     private void Update()
     {
-
-
-     
-
 
         if (!inSight)
         {
@@ -133,8 +137,6 @@ public class EnemyController : MonoBehaviour
         {
             if (collision.tag == "Player")
             {
-
-               
                 inSight = true;
             }
         }
@@ -223,7 +225,12 @@ public class EnemyController : MonoBehaviour
 
     }
 
-   
-  
+    public void TakeDamage(float dmg)
+    {
+        Currenthealth -= dmg;
+    }
+
+
+
 
 }
