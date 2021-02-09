@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 409a62be8b6f14c46882c883eb925d35
+guid: eb1af5af37bfe1a41952dbc4b6431916
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,33 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: balcony
-    second: {fileID: 2100000, guid: 36e0006c2d9421b4cb2457601ed6892f, type: 2}
+      name: earth
+    second: {fileID: 2100000, guid: e3f71aa04c437c84cac1f3ce14ff77fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: house
-    second: {fileID: 2100000, guid: 78200bf3e980aa14e9c53ab43cde1bd5, type: 2}
+      name: main
+    second: {fileID: 2100000, guid: d1d142cc2e4e8bf4c88ddaad9e0eab7b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: inner space
-    second: {fileID: 2100000, guid: d3580a3365ca0e9479e5781c8386ca1b, type: 2}
+      name: petels
+    second: {fileID: 2100000, guid: 0d5cfa17ad54e514b8add929fd999725, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: inner space2
-    second: {fileID: 2100000, guid: 9c3987a2a84656f42a56f098f0d3b24f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: roof
-    second: {fileID: 2100000, guid: 6faedb44fb3158446a62ec7291f03624, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: windows
-    second: {fileID: 2100000, guid: 13c932825494e0e439cb6b2a9d824d84, type: 2}
+      name: pot
+    second: {fileID: 2100000, guid: 70f09840e1b618c428c203e5ac2a0716, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -64,7 +54,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -115,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.003
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
