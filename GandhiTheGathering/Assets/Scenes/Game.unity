@@ -23941,6 +23941,10 @@ PrefabInstance:
       propertyPath: IsEnemy.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 325724838, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
+      propertyPath: damageG
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1834113387730670553, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.17
@@ -23987,7 +23991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834113387730670564, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_Speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1834113387730670567, guid: f195f04c7f2b8b84eaa091f9971f579b, type: 3}
       propertyPath: m_Name
