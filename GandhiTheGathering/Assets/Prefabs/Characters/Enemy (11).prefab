@@ -2215,8 +2215,8 @@ MonoBehaviour:
   smoke_e: {fileID: 2366456956615113030, guid: 7ca539e684295e64684d588fa5801e18, type: 3}
   animator: {fileID: 0}
   dest: {x: 0, y: 0, z: 0}
-  speed: 2
-  damage: 0.1
+  speed: 3
+  damage: 0.2
 --- !u!54 &-2598083320149567580
 Rigidbody:
   m_ObjectHideFlags: 0

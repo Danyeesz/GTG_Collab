@@ -73,7 +73,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 2
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 750
@@ -118,8 +118,10 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 256
-  insp: 0
-  col_atm: 0
+  IsEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  damageG: 0
 --- !u!1001 &268849151
 PrefabInstance:
   m_ObjectHideFlags: 0
