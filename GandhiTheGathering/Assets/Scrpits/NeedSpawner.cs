@@ -108,8 +108,8 @@ public class NeedSpawner : MonoBehaviour
       
         transform.GetChild(randm).gameObject.SetActive(true);
         t_image.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2);
-        transform.parent.GetComponent<FollowerController>().MinusFaith(10);
+        yield return new WaitForSeconds(5);
+        transform.parent.GetComponent<FollowerController>().MinusFaith(20);
         transform.GetChild(randm).gameObject.SetActive(false);
         t_image.gameObject.SetActive(false);
 
