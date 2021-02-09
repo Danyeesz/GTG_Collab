@@ -8,9 +8,7 @@ public class PController : MonoBehaviour
     public Camera camP;
     public NavMeshAgent agentP;
     public LayerMask Ground, IsEnemy;
-
-    public float insp;
-    public float col_atm;
+    public float damageG;
 
     Animator animator;
     private void Start()
@@ -23,7 +21,7 @@ public class PController : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, 2, IsEnemy);
         foreach (Collider col in colliders)
         {
-            col.gameObject.GetComponent<EnemyController>().TakeDamage(1 / (float)colliders.Length);
+            col.gameObject.GetComponent<EnemyController>().TakeDamage(damageG /(float)colliders.Length);
             Debug.Log(col.name + " Damaged");
         }
             
@@ -33,32 +31,8 @@ public class PController : MonoBehaviour
         Debug.Log(colliders.Length);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            
-        }
-       
-       
-    }
+  
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            col_atm++;
-        }
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            col_atm--;
-        }
-    }
 
     // Update is called once per frame
     void Update()
@@ -77,7 +51,7 @@ public class PController : MonoBehaviour
             
         }
 
-        Debug.Log(col_atm);
+
         
     }
     
