@@ -15,14 +15,22 @@ public class Insp_Slider : MonoBehaviour
     // Start is called before the first frame update
     public void SetInsp(float insp)
     {
-        slider.value += insp;
+        if (slider.value + insp > slider.maxValue)
+        {
+            slider.value = slider.maxValue;
+        }
+        else
+        {
+            slider.value += insp;
+        }
+        
     }
 
     public void SetMaxInsp(float insp)
     {
 
         slider.maxValue = insp;
-        slider.value = insp;
+       
 
     }
 }

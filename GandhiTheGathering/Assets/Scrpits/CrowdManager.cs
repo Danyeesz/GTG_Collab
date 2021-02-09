@@ -55,6 +55,23 @@ public class CrowdManager : MonoBehaviour
 
             }
         }
+        else if (transform.name == "CrowdOfTen(Clone)")
+        {
+            if (InspInc == false)
+            {
+                if (transform.childCount == 1)
+                {
+                    CrowdEmpty = true;
+                    if (CrowdEmpty == true)
+                    {
+                        InspBar.SetInsp(1f);
+                        InspInc = true;
+                    }
+
+                }
+
+            }
+        }
 
 
         if (InspInc == true)
