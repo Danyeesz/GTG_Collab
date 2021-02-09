@@ -16,7 +16,7 @@ public class FollowerCounter : MonoBehaviour
     {
         followers.text = "Followers: " + transform.childCount;
         MaxFollowers = transform.childCount;
-        DontDestroyOnLoad(gameObject);
+        
 
     }
 
@@ -28,6 +28,6 @@ public class FollowerCounter : MonoBehaviour
         {
             MaxFollowers = transform.childCount;
         }
-
+        PlayerPrefs.SetInt("MaxFollowers", MaxFollowers);
     }
 }

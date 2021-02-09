@@ -14,7 +14,7 @@ public class LostMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxtext.text += "\n" + GameObject.Find("Followers").GetComponent<FollowerCounter>().MaxFollowers.ToString();
+        maxtext.text += "\n" + PlayerPrefs.GetInt("MaxFollowers").ToString();
     }
 
     // Update is called once per frame
