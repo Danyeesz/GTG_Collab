@@ -92,12 +92,20 @@ public class FollowerController : MonoBehaviour
         {
 
             AudioSource.PlayClipAtPoint(faith0C,transform.position);
-            Destroy(gameObject);
             Instantiate(smoke_e, transform.position, Quaternion.identity);
-            Destroy(smoke_e);
+            Destroy(gameObject);
+            Invoke("DestroyS", 0.5f);
+           
             
 
         }
+
+    }
+
+    public void DestroyS() 
+    {
+
+        Destroy(smoke_e);
 
     }
 
