@@ -31,7 +31,7 @@ public class CrowdController : MonoBehaviour
 
     IEnumerator CrowdSpawn() {
         
-        while (GameTime<60)
+        while (GameTime<100)
         {
             for (int i = 0; i < Spawns.Length; i++)
             {
@@ -42,59 +42,23 @@ public class CrowdController : MonoBehaviour
                 }
 
             }
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(50);
         }
 
-        while (GameTime >= 60f && GameTime <= 120f)
+        while (GameTime >= 100f && GameTime <= 200f)
         {
             for (int i = 0; i < Spawns.Length; i++)
             {
                 if ((Player.position - Spawns[i].position).magnitude >= 20)
                 {
 
-                    Instantiate(CrowdOfThree, Spawns[i].position, Quaternion.identity);
-                }
-            }
-            yield return new WaitForSeconds(60);
-        }
-
-        while (GameTime >= 120f && GameTime <= 180f)
-        {
-            for (int i = 0; i < Spawns.Length; i++)
-            {
-                if ((Player.position - Spawns[i].position).magnitude >= 20)
-                {
                     Instantiate(CrowdOfFive, Spawns[i].position, Quaternion.identity);
                 }
-
             }
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(50);
         }
-        while (GameTime >= 180f && GameTime <= 240f)
-        {
-            for (int i = 0; i < Spawns.Length; i++)
-            {
-                if ((Player.position - Spawns[i].position).magnitude >= 20)
-                {
-                    Instantiate(CrowdOfFive, Spawns[i].position, Quaternion.identity);
-                }
 
-            }
-            yield return new WaitForSeconds(60);
-        }
-        while (GameTime >= 240f && GameTime <= 300f)
-        {
-            for (int i = 0; i < Spawns.Length; i++)
-            {
-                if ((Player.position - Spawns[i].position).magnitude >= 20)
-                {
-                    Instantiate(CrowdOfFive, Spawns[i].position, Quaternion.identity);
-                }
-
-            }
-            yield return new WaitForSeconds(60);
-        }
-        while (GameTime >= 300f && GameTime <= 360f)
+        while (GameTime >= 200f && GameTime <= 300f)
         {
             for (int i = 0; i < Spawns.Length; i++)
             {
@@ -104,9 +68,9 @@ public class CrowdController : MonoBehaviour
                 }
 
             }
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(100);
         }
-        while (GameTime >= 360f && GameTime <= 420f)
+        while (GameTime >= 300f && GameTime <= 400f)
         {
             for (int i = 0; i < Spawns.Length; i++)
             {
@@ -116,20 +80,31 @@ public class CrowdController : MonoBehaviour
                 }
 
             }
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(50);
         }
-        while (GameTime >= 420f)
+        while (GameTime >= 400f && GameTime <= 500f)
         {
             for (int i = 0; i < Spawns.Length; i++)
             {
                 if ((Player.position - Spawns[i].position).magnitude >= 20)
                 {
                     Instantiate(CrowdOfTen, Spawns[i].position, Quaternion.identity);
-                    Instantiate(CrowdOfFive, Spawns[i].position, Quaternion.identity);
                 }
 
             }
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(50);
+        }
+        while (GameTime >= 500f)
+        {
+            for (int i = 0; i < Spawns.Length; i++)
+            {
+                if ((Player.position - Spawns[i].position).magnitude >= 20)
+                {
+                    Instantiate(CrowdOfTen, Spawns[i].position, Quaternion.identity);
+                }
+
+            }
+            yield return new WaitForSeconds(30);
         }
     }
 }

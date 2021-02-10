@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4be5b9abae835740b4212d9bf434361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 40
+  maxTime: 85
   minTime: 5
   needtime: 3
   timer: 0

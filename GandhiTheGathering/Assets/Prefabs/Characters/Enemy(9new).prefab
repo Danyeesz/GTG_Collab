@@ -1925,12 +1925,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4be5b9abae835740b4212d9bf434361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 40
+  maxTime: 85
   minTime: 5
   needtime: 3
   timer: 0
   f_leave: 3
-  Need0: {fileID: 8300000, guid: 69e558779d1f6e94ab37877c1e1c89ab, type: 3}
   t_image: {fileID: 7586678116600550199}
   FoodVsEqu: {fileID: 0}
   HinduVsReli: {fileID: 0}
